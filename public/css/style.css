@@ -79,18 +79,15 @@ h3 {
     margin-left: 20%;
 }
 
-
 /* Login Page */
 
- .card {
-    position: absolute;
+.container {
+    display: flex;
+    height: 450px;
+    width: 400px;
     background: white;
-    border: black;
     opacity: 50%;
-    width: 30%;
     border-radius: 15px;
-}
-
-input {
-    border-radius: 15px;
+    margin: auto;
+    margin-top: 7%;
 }
