@@ -1,12 +1,35 @@
-* {
-  font-family: 'Cinzel Decorative', sans-serif;
-}
+/* All page features */
 
 nav {
     display: flex;
     background: #3d3543; 
     width: 100%;
-    justify-content: flex-end;
+    align-items: center;
+}
+
+#navTitle {
+ color: white;
+ font-family: 'Cinzel Decorative', sans-serif;
+ /* position: absolute;
+ left: 50%;
+ transform: translateX(-50%); */
+ flex-grow: 1;
+ text-align: center;
+ letter-spacing: 15px;
+}
+
+#navList {
+    align-items: right;
+}
+
+.center {
+    flex: 1;
+    text-align: center;
+    justify-content: center;
+}
+
+.center p {
+    margin: 0;
 }
 
 .navButton {
@@ -14,13 +37,44 @@ nav {
     background-color: transparent;
     border: none;
     margin-right: 10px;
+    font-family: 'Kalam', cursive;
 }
 
 body {
     height: 100%;
-    background-image: url('../assets/images/mainPage.jpeg');
+    background-image: url('../assets/images/mainPage.png');
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0%;
     padding: 0%;
-};
+}
+
+/* Landing Page */
+
+h1 {
+    color: white;
+    font-family: 'Cinzel Decorative', sans-serif;
+    backdrop-filter: blur();
+    font-size:350%;
+    letter-spacing: 40px;
+    margin-left: 20%;
+    margin-top: 10%;
+    text-shadow: 0 0 8px white;
+}
+
+h3 {
+    color: white;
+    font-family: 'Kalam', cursive;
+    letter-spacing: 5px;
+    text-shadow: 0 0 8px white;
+}
+
+#topLine {
+    margin-top: 1%;
+    margin-left: 35%;
+}
+
+#bottomLine {
+    margin-top: 2%;
+    margin-left: 20%;
+}
