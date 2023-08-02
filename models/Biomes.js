@@ -10,7 +10,8 @@ class BiomeFire extends Model {}
 BiomeIce.init(
   {
     id: {
-      type: DataTypes.UUID,
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
       allowNull: false,
       primaryKey: true,
     },
@@ -37,7 +38,8 @@ BiomeIce.init(
 BiomeDesert.init(
   {
     id: {
-      type: DataTypes.UUID,
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
       allowNull: false,
       primaryKey: true,
     },
@@ -64,7 +66,8 @@ BiomeDesert.init(
 BiomeFire.init(
   {
     id: {
-      type: DataTypes.UUID,
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
       allowNull: false,
       primaryKey: true,
     },
