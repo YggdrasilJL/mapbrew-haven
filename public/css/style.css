@@ -78,3 +78,19 @@ h3 {
     margin-top: 2%;
     margin-left: 20%;
 }
+
+
+/* Login Page */
+
+ .card {
+    position: absolute;
+    background: white;
+    border: black;
+    opacity: 50%;
+    width: 30%;
+    border-radius: 15px;
+}
+
+input {
+    border-radius: 15px;
+}
