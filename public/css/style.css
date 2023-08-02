@@ -1,3 +1,21 @@
+* {
+  font-family: 'Cinzel Decorative', sans-serif;
+}
+
+nav {
+    display: flex;
+    background: #3d3543; 
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.navButton {
+    color: white;
+    background-color: transparent;
+    border: none;
+    margin-right: 10px;
+}
+
 body {
     height: 100%;
     background-image: url('../assets/images/mainPage.jpeg');
