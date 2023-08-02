@@ -84,6 +84,7 @@ h3 {
     flex-direction: column;
     margin: auto;
     width: 75%;
+    font-family: 'Kalam', cursive;
 }
 
 .box {
@@ -92,6 +93,17 @@ h3 {
     margin: 5%;
     border: none;
     box-shadow: 0 7px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* to stop input fields from highlights blue upon selection */
+
+input[type= email]:focus { 
+    outline: transparent;
+    
+}
+
+input[type=password]:focus {
+    outline: transparent;
 }
 
 #submit {
