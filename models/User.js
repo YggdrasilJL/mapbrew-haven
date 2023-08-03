@@ -12,6 +12,11 @@ User.init(
       allowNull: false,
       primaryKey: true,
     },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+
+    },
     user_name: {
       type: DataTypes.STRING,
       allowNull: false,
