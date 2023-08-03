@@ -27,20 +27,26 @@ rel="stylesheet"
   </nav>
   <div class="mainContainer">
     <div class="mapContainer">
-      <h2>Map</h1>
+      <div>
+      <h2>Map</h2>
+      <!-- Canvas -->
+      <canvas width="480" height="480">
+      </canvas>
+      </div>
+      <div class="canvasControls">
+         <button class="button-as-link" onclick="clearCanvas()">Clear Canvas</button>
+         <button class="primary-button" onclick="exportImage()">Export Image</button>
+      </div>
         <div class="card">
-             <div>
+             <!-- <div>
        <button class="button-as-link" onclick="clearCanvas()">Clear Canvas</button>
                 <button class="primary-button" onclick="exportImage()">Export Image</button>
-             </div>
+             </div> -->
           </header>
           <div class="card_body">
             
              <div class="card_right-column">
-                <!-- The main canvas -->
-                <canvas width="480" height="480">
-                </canvas>
-             
+
                 <!-- UI for layers -->
                 <div>
                    <label>Editing Layer:</label>
