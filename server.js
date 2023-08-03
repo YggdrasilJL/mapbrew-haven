@@ -12,7 +12,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-
+app.get('/', (res, req) => {
+  
+})
 
 sequelize.sync().then(() => {
   app.listen(PORT, () => console.log(`Now listening at ${PORT}`));

@@ -3,9 +3,9 @@ const bcrypt = require('bcrypt');
 const { v4: uuid } = require('uuid');
 const sequelize = require('../config/connection');
 
-class Users extends Model {}
+class User extends Model {}
 
-Users.init(
+User.init(
   {
     id: {
       type: DataTypes.UUID,
@@ -16,21 +16,16 @@ Users.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    first_name: {
+    // first_name: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    // },
+    // last_name: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    // },
+    password: {
       type: DataTypes.STRING,
-      allowNull: false,
-    },
-    last_name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    active: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-    },
-    date_added: {
-      type: DataTypes.DATE,
-      defaultValue: DataTypes.NOW,
       allowNull: false,
     },
   },
@@ -41,4 +36,4 @@ Users.init(
   }
 );
 
-module.exports = Users;
+module.exports = User;
