@@ -153,3 +153,24 @@ h2 {
     font-size: xx-large;
     color: white;
 }
+
+.card {
+    display: flex;
+    margin-top: 20%;
+}
+
+.tileset-Container{
+    display: flex;
+    margin-top: 20%;
+}
+
+canvas {
+    background: #7a7a7a67 ; 
+
+  }
+
+  .layers{
+    display: flex;
+    align-items: center;
+  }
+  
