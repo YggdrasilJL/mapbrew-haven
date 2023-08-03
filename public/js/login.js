@@ -1,3 +1,18 @@
+// Login password Hide/show
+
+let lockicon = document.getElementById('lockicon');
+let password = document.getElementById('password');
+
+lockicon.onclick = function() {
+    if(password.type == 'password'){
+        password.type = 'text';
+        lockicon.src= '../assets/images/unlock.png';
+    } else {
+        password.type = 'password'
+        lockicon.src = '../assets/images/lock.png'
+    }
+};
+
 //  Signup Modal 
 
 function openModal() {

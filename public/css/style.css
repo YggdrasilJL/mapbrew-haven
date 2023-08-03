@@ -103,6 +103,20 @@ h3 {
     box-sizing: border-box;
 }
 
+.passContainer {
+    display: flex;
+    align-items: center;
+}
+
+.passContainer input {
+    width: 100%;
+    
+}
+.passContainer img {
+    width: 7%;
+    cursor: pointer;
+}
+
 .subContainer {
     display: flex;
     justify-content: center;
