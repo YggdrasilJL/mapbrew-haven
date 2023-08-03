@@ -146,7 +146,7 @@ button:hover {
     color: black;
 }
 
-/* to stop input fields from highlights blue upon selection */
+/* to stop input fields from highlighting blue upon selection */
 
 input[type= email]:focus { 
     outline: transparent;
@@ -174,9 +174,11 @@ input[type=password]:focus {
  flex-direction: row;
 }
 
+/* Map Section */
+
 .mapContainer {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     height: 600px;
     width: 1000px;
     background-color: rgba(255, 255, 255, 0.5);
@@ -184,9 +186,68 @@ input[type=password]:focus {
     margin-left: 3%;
     margin-top: 3%;
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-.tileContainer {
+.canvasContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+}
+
+canvas {
+    background: #7a7a7a67;
+    margin: auto;
+}
+
+h2 {
+    font-family: 'Kalam', cursive;
+    font-size: xx-large;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.canvasControls {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: left;
+}
+
+.tileset-Container{
+    display: flex;
+    margin-top: 30%;
+}
+
+  .layersContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+
+canvas {
+    background: #7a7a7a67 ; 
+    
+  }
+
+  .layers{
+    display: flex;
+    align-items: center;
+  }
+
+  label {
+    font-family: 'Kalam', cursive;
+    color: white;
+  }
+
+  /* Tile Section */
+  
+  .tileContainer {
     display: flex;
     flex-direction: row;
     height: 600px;
@@ -198,30 +259,3 @@ input[type=password]:focus {
     margin-top: 3%;
     justify-content: center;
 }
-
-h2 {
-    font-family: 'Kalam', cursive;
-    font-size: xx-large;
-    color: white;
-}
-
-.card {
-    display: flex;
-    margin-top: 20%;
-}
-
-.tileset-Container{
-    display: flex;
-    margin-top: 20%;
-}
-
-canvas {
-    background: #7a7a7a67 ; 
-
-  }
-
-  .layers{
-    display: flex;
-    align-items: center;
-  }
-  
