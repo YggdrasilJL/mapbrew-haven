@@ -3,6 +3,7 @@
     <head>
         <title>Login | Mapbrew</title>
         <link rel="stylesheet" href="../css/reset.css">
+        <link rel="stylesheet" href="../css/modal.css">
         <link rel="stylesheet" href="../css/style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,11 +24,44 @@
           </div>
           </nav>
           <div class="container">
+            <div id="loginform">
             <form action="" class="form">
                 <input type="email" name="email" class="box" placeholder="username">
                 <input type="password" name="password" class="box" placeholder="password">
+                <div class="subContainer">
                 <input type="submit" value="Login" id="submit">
-            </form>
+                </div>
+              </form>
+            </div>
+            <div class="links">
+            <div id="signup">
+              <button id="openModalBtn">sign up</button>
+            </div>
+            <div id="forgotpassword">
+              <button>forgot password?</button>
+            </div>
+            </div>
           </div>
+          <!-- Sign Up Modal -->
+          <div id="signupModal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="closeModalBtn">&times;</span>
+               <div>
+                <form>
+                  <input type="text" name="firstname" class="box"  placeholder="first name">
+                  <input type="text" name="lastname" class="box"  placeholder="last name">
+                  <input type="text" name="username" class="box" placeholder="username">
+                  <input type="email" name="email" class="box" placeholder="email">
+                  <input type="password" name="password" class="box" placeholder="password">
+                  <div class="subContainer">
+                  <input type="submit" value="Sign Up" id="userSubmit">
+                  </div>  
+                </form>
+               </div>
+            </div>
+        </div>
+
+
+        <script src="../js/login.js"></script>
     </body>
 </html>

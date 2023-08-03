@@ -70,6 +70,7 @@ h3 {
 
 .container {
     display: flex;
+    flex-direction: column;
     height: 450px;
     width: 400px;
     background-color: rgba(255, 255, 255, 0.5);
@@ -78,10 +79,15 @@ h3 {
     margin-top: 7%;
 }
 
+#loginform {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+}
 .form {
     opacity: 1;
-    display: flex;
-    flex-direction: column;
     margin: auto;
     width: 75%;
     font-family: 'Kalam', cursive;
@@ -90,9 +96,54 @@ h3 {
 .box {
     border-radius: 15px;
     background: #D9D9D9;
-    margin: 5%;
+    margin-top: 35px;
     border: none;
     box-shadow: 0 7px 10px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.subContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+#submit {
+    margin-top: 40px;
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    flex-grow: 1; 
+    align-items: flex-end; 
+}
+
+#signup, #forgotpassword {
+    display: flex;
+    justify-content: flex-start;
+
+}
+
+#signup {
+    margin-left: 10px;
+}
+
+#forgotpassword {
+    margin-right: 10px;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-family: 'Kalam', cursive;
+}
+
+button:hover {
+    color: black;
 }
 
 /* to stop input fields from highlights blue upon selection */
@@ -126,7 +177,7 @@ input[type=password]:focus {
 .mapContainer {
     display: flex;
     flex-direction: row;
-    height: 800px;
+    height: 600px;
     width: 1000px;
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 15px;
@@ -138,7 +189,7 @@ input[type=password]:focus {
 .tileContainer {
     display: flex;
     flex-direction: row;
-    height: 800px;
+    height: 600px;
     width: 600px;
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 15px;
@@ -153,3 +204,24 @@ h2 {
     font-size: xx-large;
     color: white;
 }
+
+.card {
+    display: flex;
+    margin-top: 20%;
+}
+
+.tileset-Container{
+    display: flex;
+    margin-top: 20%;
+}
+
+canvas {
+    background: #7a7a7a67 ; 
+
+  }
+
+  .layers{
+    display: flex;
+    align-items: center;
+  }
+  
