@@ -4,6 +4,7 @@
         <title>Login | Mapbrew</title>
         <link rel="stylesheet" href="../css/reset.css">
         <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/modal.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet">
@@ -45,8 +46,15 @@
           <div id="signupModal" class="modal">
             <div class="modal-content">
                 <span class="close" id="closeModalBtn">&times;</span>
-                <!-- Your modal content goes here -->
-                <p>Hello, this is your modal content!</p>
+               <div>
+                <form>
+                  <input type="text" name="firstname" id="firstName" placeholder="First Name">
+                  <input type="text" name="lastname" id="lastName" placeholder="Last Name">
+                  <input type="text" name="username" id="username" placeholder="username">
+                  <input type="password" name="password" id="newPassword" placeholder="password">
+                  <input type="submit" value="Sign Up!" id="userSubmit">
+                </form>
+               </div>
             </div>
         </div>
 
