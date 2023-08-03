@@ -1,19 +1,42 @@
 const router = require('express').Router();
+const { v4: uuid } = require('uuid');
+const bcrypt = require('bcrypt');
 const User = require('../../models/User');
 
-router.get('/', async (req, res) => {
-  const userData = await User.findAll().catch((err) => {
-    res.json(err);
-  });
-  res.json(userData);
+router.post('/register', async (req, res) => {
+  try {
+    const { first_name, last_name, user_name, email, password } = req.body;
+    const hashedPw = await bcrypt.hash(password, 10);
+
+    const newUser = await User.create({
+      id: uuid(),
+      user_name,
+      email,
+      password: hashedPw,
+    });
+
+    res.status(201).json({ message: 'User registered.' });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'Error registering User.' });
+  }
 });
 
-router.post('/', async (req, res) => {
+router.post('/login', async (req, res) => {
   try {
-    const userData = await User.create(req.body);
-    res.status(200).json(userData);
+    const { user_name, password } = req.body;
+
+    const user = await User.findOne({
+      where: user_name,
+    });
+    if (user && (await bcrypt.compare(password, user.password))) {
+      res.status(200).json({ message: 'Now logged in:', user });
+    } else {
+      res.status(401).json({ message: 'Invalid username or password.' });
+    }
   } catch (err) {
-    res.status(400).json(err);
+    console.error(err);
+    res.status(500).json({ message: 'Error logging in' });
   }
 });
 
