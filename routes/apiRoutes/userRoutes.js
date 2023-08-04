@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { v4: uuid } = require('uuid');
 const bcrypt = require('bcrypt');
 const User = require('../../models/User');
+const session = require('express-session');
 
 router.post('/register', async (req, res) => {
   try {
