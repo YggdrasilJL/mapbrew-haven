@@ -2,6 +2,16 @@ const router = require('express').Router();
 const { v4: uuid } = require('uuid');
 const bcrypt = require('bcrypt');
 const User = require('../../models/User');
+// get all users
+router.get('/', async (req, res) => {
+  const allUsers = await User.findAll();
+  res.json(allUsers);
+});
+// get user by id
+router.get('/:id', async (req, res) => {
+  const user = await User.findByPk(req.params.id);
+  res.json(user)
+});
 
 router.post('/register', async (req, res) => {
   try {
@@ -51,7 +61,7 @@ router.post('/login', async (req, res) => {
     res.status(500).json({ message: 'Error logging in' });
   }
 
-  res.redirect('/login')
+  res.redirect('/login');
 });
 
 router.post('/logout', (req, res) => {
@@ -63,6 +73,5 @@ router.post('/logout', (req, res) => {
     res.status(404).end();
   }
 });
-
 
 module.exports = router;
