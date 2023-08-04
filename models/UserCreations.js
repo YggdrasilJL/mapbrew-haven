@@ -3,12 +3,13 @@ const bcrypt = require('bcrypt');
 const { v4: uuid } = require('uuid');
 const sequelize = require('../config/connection');
 
-class UserCreations extends Model {}
+class UserCreations extends Model { }
 
 UserCreations.init(
   {
     id: {
       type: DataTypes.UUID,
+      defaultValue: UUIDV4,
       allowNull: false,
       primaryKey: true,
     },
