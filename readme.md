@@ -4,6 +4,8 @@
 
 Mapbrew is an interactive website focused on creating tile based maps for tabletop RPGs. 
 
+## Future Features
+
 ## Table of Contents
 
 - [Installation](#installation)
