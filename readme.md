@@ -2,6 +2,7 @@
 
 ## Project Description
 
+Mapbrew is an interactive website focused on creating tile based maps for tabletop RPGs. 
 
 ## Table of Contents
 
@@ -26,6 +27,13 @@
 ## Usage <a id="usage"></a>
 
 ## Questions <a id="questions"></a>
+
+This website was divised and completed by Jacob Lowther, Nikki Vigneault, Daniel Grayson, and Scott Ogrins, if you'd like to see more of our work see our github repositories below:
+
+Jacob - [YggdrasilJL]("https://github.com/YggdrasilJL")<br>
+Nikki - [nikkivno]("https://github.com/nikkivno")<br>
+Daniel - [GrayCoded]("https://github.com/GrayCoded")<br>
+Scott - [Scoges]("https://github.com/scoges")
 
 ## What's going on
 
