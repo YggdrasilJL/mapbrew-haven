@@ -3,13 +3,29 @@
 ## Project Description
 
 
+## Table of Contents
+
+- [Installation](#installation)
+- [Examples](#examples)
+- [Credits](#credits)
+- [Tests](#tests)
+- [Usage](#usage)
+- [Questions](#questions)
+
+## Installation <a id="installation"></a>
+
+## Examples <a id="examples"></a>
 
 
-## Credits
+## Credits<a id="credits"></a>
 
 - Lock and Unlock images by DinosoftLabs on flatiron.com 
 
+## Tests <a id="tests"></a>
 
+## Usage <a id="usage"></a>
+
+## Questions <a id="questions"></a>
 
 ## What's going on
 
