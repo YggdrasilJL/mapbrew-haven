@@ -21,13 +21,17 @@ User.init(
       allowNull: false,
       unique: true,
       validate: {
+        notEmpty: true,
         isEmail: true,
-        len: [4, 25],
       },
     },
     user_name: {
       type: DataTypes.STRING,
       allowNull: false,
+      validate: {
+        // username must be between 4-30 characters
+        len: [4, 30],
+      },
     },
     // first_name: {
     //   type: DataTypes.STRING,
@@ -41,12 +45,14 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [8],
+        // password must have at least 8 characters, including at least one letter and one digit
+        is: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/,
       },
     },
   },
   {
     hooks: {
+      // hashes their password before adding user to the database
       beforeCreate: async (newUser) => {
         newUser.password = await bcrypt.hash(newUser.password, 10);
         return newUser;
