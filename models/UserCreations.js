@@ -29,7 +29,12 @@ UserCreations.init(
       defaultValue: DataTypes.NOW,
       allowNull: false,
     },
+    upvotes: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0,
+    }
   },
+  // put hooks for the association between user and user creations
   {
     sequelize,
     underscored: true,
