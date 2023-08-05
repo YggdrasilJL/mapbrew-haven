@@ -55,7 +55,7 @@ router.get('/:id', async (req, res) => {
     try {
       const { userId, mapId } = req.params;
       // Find the map and delete it
-      await UserCreations.destroy({ where: { userId, id: mapId } });
+      await User.destroy({ where: { userId, id: mapId } });
       res.json({ message: 'Map deleted successfully.' });
     } catch (err) {
       res.status(500).json({ error: 'Failed to delete the map.' });
