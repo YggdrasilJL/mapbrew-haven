@@ -5,31 +5,31 @@ const UserCreations = require('../../models/UserCreations');
 
 // get user by id 
 router.get('/:id', async (req, res) => {
-    const user = await UserCreations.findByPk(req.params.id);
-    res.json(user)
+    const userCreation = await UserCreations.findByPk(req.params.id);
+    res.json(userCreation)
+  });
+
+  router.get('/:id'/maps, async (req, res) => {
+    try {
+      const mapId = req.params.id;
+      const userMaps = await UserCreations.findAll({ where: { mapId } });
+      res.json(userMaps);
+    } catch (err) {
+      res.status(500).json({ error: 'Failed to get user maps.' });
+    }
   });
 
   router.post('/', async (req, res) => {
     try {
-      const { userId, mapData } = req.body; // Assuming you receive userId and mapData in the request body
+      const { map_name, user_name } = req.body;
       // Save the map to the database
       const newMap = await UserCreations.create({
-        userId,
-        mapData,
+        map_name,
+        user_name,
       });
       res.json(newMap);
     } catch (err) {
       res.status(500).json({ error: 'Failed to create a new map.' });
-    }
-  });
-
-  router.get('/:userId/maps', async (req, res) => {
-    try {
-      const userId = req.params.userId;
-      const userMaps = await UserCreations.findAll({ where: { userId } });
-      res.json(userMaps);
-    } catch (err) {
-      res.status(500).json({ error: 'Failed to get user maps.' });
     }
   });
 
@@ -62,8 +62,4 @@ router.get('/:id', async (req, res) => {
     }
   });
   
-
-
-
-
 module.exports = router;
