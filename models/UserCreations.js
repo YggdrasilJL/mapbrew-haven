@@ -32,7 +32,7 @@ UserCreations.init(
     upvotes: {
       type: DataTypes.INTEGER,
       defaultValue: 0,
-    }
+    },
   },
   // put hooks for the association between user and user creations
   {

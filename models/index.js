@@ -6,6 +6,4 @@ User.hasMany(UserCreations, {
   foreignKey: 'user_name',
 });
 
-
-
 module.exports = { User, UserCreations, League };

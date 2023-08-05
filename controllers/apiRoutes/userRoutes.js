@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
 // get user by id
 router.get('/:id', async (req, res) => {
   const user = await User.findByPk(req.params.id);
-  res.json(user)
+  res.json(user);
 });
 
 router.post('/register', async (req, res) => {
