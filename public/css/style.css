@@ -122,6 +122,15 @@ h3 {
     cursor: pointer;
 }
 
+.modal-content img {
+    position: absolute;
+    right: 10px;
+    width: 4%;
+    padding-top: 33px;
+    cursor: pointer;
+}
+
+
 .subContainer {
     display: flex;
     justify-content: center;
