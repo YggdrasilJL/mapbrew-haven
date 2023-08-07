@@ -9,7 +9,7 @@ router.get('/:id', async (req, res) => {
     res.json(userCreation)
   });
 
-  router.get('/:id'/maps, async (req, res) => {
+  router.get('/:id/maps', async (req, res) => {
     try {
       const mapId = req.params.id;
       const userMaps = await UserCreations.findAll({ where: { mapId } });
