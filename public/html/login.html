@@ -1,74 +1,111 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Login | Mapbrew</title>
-        <link rel="stylesheet" href="../css/reset.css">
-        <link rel="stylesheet" href="../css/modal.css">
-        <link rel="stylesheet" href="../css/style.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <nav>
-            <div class="center">
-            <a href="../index.html"><p id="navTitle">Mapbrew</p></a>
-            </div>
-            <div class="right">
-            <button class="navButton"><a href="login.html">Login</a></button>
-            <button class="navButton">
-              <a href="mapBuilder.html">Map Builder</a>
-            </button>
-            <button class="navButton"><a href="faq.html">FAQ</a></button>
-          </div>
-          </nav>
-          <div class="container">
-            <div id="loginform">
-            <form action="" class="form">
-                <input type="text" name="username" class="box" placeholder="username">
-                
-                
-                <div class="passContainer">
-                <input type="password" name="password" class="box" placeholder="password" id="password">
-                   <img src="../assets/images/lock.png" id="lockicon">
-                  </div>
+  <head>
+    <title>Login | Mapbrew</title>
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/modal.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kalam&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav>
+      <div class="center">
+        <a href="../index.html"><p id="navTitle">Mapbrew</p></a>
+      </div>
+      <div class="right">
+        <button class="navButton"><a href="login.html">Login</a></button>
+        <button class="navButton">
+          <a href="mapBuilder.html">Map Builder</a>
+        </button>
+        <button class="navButton"><a href="faq.html">FAQ</a></button>
+      </div>
+    </nav>
+    <div class="container">
+      <div id="loginform">
+        <form action="" class="form">
+          <input
+            type="text"
+            name="username"
+            class="box"
+            placeholder="username"
+          />
 
-
-                <div class="subContainer">
-                <input type="submit" value="Login" id="submit">
-                </div>
-              </form>
-            </div>
-            <div class="links">
-            <div id="signup">
-              <button id="openModalBtn">sign up</button>
-            </div>
-            <div id="forgotpassword">
-              <button>forgot password?</button>
-            </div>
-            </div>
+          <div class="passContainer">
+            <input
+              type="password"
+              name="password"
+              class="box"
+              placeholder="password"
+              id="password"
+            />
+            <img src="../assets/images/lock.png" id="lockicon" />
           </div>
-          <!-- Sign Up Modal -->
-          <div id="signupModal" class="modal">
-            <div class="modal-content">
-                <span class="close" id="closeModalBtn">&times;</span>
-               <div>
-                <form>
-                  <input type="text" name="firstname" class="box"  placeholder="first name">
-                  <input type="text" name="lastname" class="box"  placeholder="last name">
-                  <input type="text" name="username" class="box" placeholder="username">
-                  <input type="email" name="email" class="box" placeholder="email">
-                  <input type="password" name="password" class="box" placeholder="password">
-                  <div class="subContainer">
-                  <input type="submit" value="Sign Up" id="userSubmit">
-                  </div>  
-                </form>
-               </div>
-            </div>
+
+          <div class="subContainer">
+            <input type="submit" value="Login" id="submit" />
+          </div>
+        </form>
+      </div>
+      <div class="links">
+        <div id="signup">
+          <button id="openModalBtn">sign up</button>
         </div>
+        <div id="forgotpassword">
+          <button>forgot password?</button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Sign Up Modal -->
+    <div id="signupModal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="closeModalBtn">&times;</span>
+        <div>
+          <form>
+            <input
+              type="text"
+              name="username"
+              class="box"
+              placeholder="username"
+            />
+            <input type="email" name="email" class="box" placeholder="email" />
+            <div class="passContainer">
+              <input
+                type="password"
+                name="password"
+                class="box"
+                placeholder="password"
+                id="password"
+              />
+              <img src="../assets/images/lock.png" id="lockicon" />
+            </div>
+            <div class="passContainer">
+              <input
+                type="password"
+                name="password"
+                class="box"
+                placeholder=" confirm password"
+                id="password"
+              />
+              <img src="../assets/images/lock.png" id="lockicon" />
+            </div>
+            <div class="subContainer">
+              <input type="submit" value="Sign Up" id="userSubmit" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
 
-
-        <script src="../js/login.js"></script>
-    </body>
+    <script src="../js/login.js"></script>
+  </body>
 </html>

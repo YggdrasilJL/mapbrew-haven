@@ -1,7 +1,7 @@
 // Login password Hide/show
 
 let lockicon = document.getElementById('lockicon');
-let password = document.getElementById('password');
+let password = document.querySelector('#password');
 
 lockicon.onclick = function() {
     if(password.type == 'password'){
