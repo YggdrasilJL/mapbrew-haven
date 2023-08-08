@@ -1,4 +1,4 @@
-body {
+main {
   font-family: 'Kalam', cursive !important;
   font-weight: 400 !important;
 }
@@ -16,15 +16,19 @@ body {
 }
 
 .all {
-  font-size: 20px !important;
+  font-size: 90px !important;
+  transform: scale(0.5);
+  background-image: url('../assets/images/scroll.png') !important;
+  width: 845px;
+  height: 300px !important;
 }
 
-.btn {
+.q {
   font-size: 30px !important;
   margin-top: 20px;
   width: 845px;
   height: 150px;
-  background-image: url('../assets/images/scroll-top.png') !important;
+  background-image: url('../assets/images/scroll-top.png');
   background-repeat: no-repeat;
 }
 
@@ -42,4 +46,20 @@ body {
   font-size: 20px !important;
   width: 800px;
   padding: 1%;
+}
+
+#faq {
+  margin-top: 2%;
+  display: flex;
+  height: fit-content;
+  justify-content: center;
+  align-items: center;
+}
+
+#faq p {
+  text-shadow: 4px 10px rgba(153, 85, 13, 0.344);
+  color: rgba(0, 0, 0, 0.414);
+  font-family: 'MedievalSharp', cursive;
+  font-weight: 1000;
+  font-size: 250px;
 }

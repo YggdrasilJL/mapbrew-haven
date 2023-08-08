@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
             collapseElement.show();
           }
         }
-        btnText.textContent = 'Hide all answers';
+        btnText.textContent = 'Roll up scrolls';
       } else {
         for (const container of colContain) {
           if (container.classList.contains('show')) {
@@ -23,12 +23,10 @@ document.addEventListener('DOMContentLoaded', () => {
             collapseElement.hide();
           }
         }
-        btnText.textContent = 'Show all answers';
+        btnText.textContent = 'Unroll scrolls';
       }
     });
   }
-
-
-
+  
   toggleAns();
 });
