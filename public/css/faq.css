@@ -1,3 +1,8 @@
+body {
+  font-family: 'Kalam', cursive !important;
+  font-weight: 400 !important;
+}
+
 .d-inline-flex {
   margin: 0 !important;
 }
@@ -10,20 +15,31 @@
   align-items: center;
 }
 
-
+.all {
+  font-size: 20px !important;
+}
 
 .btn {
+  font-size: 30px !important;
   margin-top: 20px;
-  width: 500px;
-  background-color: rgb(203, 166, 117) !important;
+  width: 845px;
+  height: 150px;
+  background-image: url('../assets/images/scroll-top.png') !important;
+  background-repeat: no-repeat;
 }
 
 .contain {
-  background-color: rgba(255, 255, 255, 0.5) !important;
   border-radius: 15px;
 }
 
 .collapse-content {
-  width: 500px;
+  text-align: center;
+  margin-left: 20px;
+  background-image: url('../assets/images/scroll-bot.png') !important;
+  background-repeat: no-repeat;
+  width: 674px !important;
+  height: 300px;
+  font-size: 20px !important;
+  width: 800px;
   padding: 1%;
 }
