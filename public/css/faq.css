@@ -1,14 +1,14 @@
 .d-inline-flex {
-    margin: 0 !important;
+  margin: 0 !important;
 }
 
 .btn {
-    background-color: rgb(203, 166, 117) !important;
+  background-color: rgb(203, 166, 117) !important;
 }
 
-.cont {
-    background-color: rgba(255, 255, 255, 0.5) !important;
-    border-radius: 15px;
+.contain {
+  background-color: rgba(255, 255, 255, 0.5) !important;
+  border-radius: 15px;
 }
 
 .collapse-content {
