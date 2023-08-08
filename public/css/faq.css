@@ -6,7 +6,7 @@
     background-color: rgb(203, 166, 117) !important;
 }
 
-#info {
+.cont {
     background-color: rgba(255, 255, 255, 0.5) !important;
     border-radius: 15px;
 }
