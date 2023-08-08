@@ -2,7 +2,19 @@
   margin: 0 !important;
 }
 
+.allQuestContain,
+.quest {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
 .btn {
+  margin-top: 20px;
+  width: 500px;
   background-color: rgb(203, 166, 117) !important;
 }
 
@@ -12,5 +24,6 @@
 }
 
 .collapse-content {
+  width: 500px;
   padding: 1%;
 }
