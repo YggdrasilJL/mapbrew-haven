@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const toggleBtn = document.querySelector('.collapseAll');
-  const btnText = document.querySelector('.all');
+  // const toggleBtn = document.querySelector('.collapseAll');
+  const btn = document.querySelector('.all');
   const colContain = document.querySelectorAll('.contain');
   let isToggled = false;
 
   function toggleAns() {
-    toggleBtn.addEventListener('click', () => {
+    btn.addEventListener('click', () => {
       isToggled = !isToggled;
 
       if (isToggled) {
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
             collapseElement.show();
           }
         }
-        btnText.textContent = 'Roll up scrolls';
+        btn.textContent = 'Roll up scrolls';
       } else {
         for (const container of colContain) {
           if (container.classList.contains('show')) {
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
             collapseElement.hide();
           }
         }
-        btnText.textContent = 'Unroll scrolls';
+        btn.textContent = 'Unroll scrolls';
       }
     });
   }
