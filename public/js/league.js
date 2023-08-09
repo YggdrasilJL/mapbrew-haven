@@ -21,7 +21,6 @@ const postReview = (review) =>
         .catch((error) => {
             console.error('Error in POST request:', error);
         });
-
 // Listen for when the form is submitted
 reviewForm.addEventListener('submit', (e) => {
     e.preventDefault();
