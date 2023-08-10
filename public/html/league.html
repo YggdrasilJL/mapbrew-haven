@@ -1,27 +1,26 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Submit Review</title>
-    <link rel="stylesheet" href="../css/reset.css"/>
-    <link rel="stylesheet" href="../css/league.css"/>
-    <link rel="stylesheet" href="../css/style.css" />
-    <link
-    href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap"
-    rel="stylesheet"
-  />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Kalam&display=swap"
-    rel="stylesheet"
-  />
-  </head>
-  <body>
-    <nav>
-      <div class="center">
-        <a href="../index.html"><p id="navTitle">Mapbrew</p></a>
-      </div>
-      <div class="right">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Submit Review</title>
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="../css/league.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+</head>
+
+<body>
+  <nav>
+    <div class="center">
+      <a href="../index.html">
+        <p id="navTitle">Mapbrew</p>
+      </a>
+    </div>
+    <div class="right">
       <button class="navButton"><a href="login.html">Login</a></button>
       <button class="navButton">
         <a href="mapBuilder.html">Map Builder</a>
@@ -29,48 +28,43 @@
       <button class="navButton"><a href="league.html">League</a></button>
       <button class="navButton"><a href="faq.html">FAQ</a></button>
     </div>
-    </nav>
-
-    <div class="jumbotron"><h1>Submit A Review</h1></div>
-    <div class="container">
-      <form class="p-5 col-8" id="review-form">
-        <div class="form-group">
-          <label for="username">Username or Email</label>
-          <input
-            type="username"
-            class="form-input"
-            id="username"
-            aria-describedby="usernameHelp"
-            placeholder="Enter username"
-          />
-          <small id="usernameHelp" class="form-text text-muted"
-            >We'll never share your email with anyone else.</small
-          >
-        </div>
-        <div class="form-group">
-          <label for="product">Product</label>
-          <input
-            type="usercreation"
-            class="form-input"
-            id="product"
-            placeholder="product"
-          />
-        </div>
-        <div class="form-group">
-          <label for="review">Review</label>
-          <input
-            type="review"
-            class="form-input"
-            id="review"
-            placeholder="review"
-          />
-        </div>
-        <button type="submit" class="btn btn-primary" id="submit-btn">
-          Submit
-        </button>
-      </form>
+  </nav>
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="/images/map-1.jpeg" />
+      </div>
+      <div class="swiper-slide">
+        <img src="/images/map-2.jpeg" />
+      </div>
+      <div class="swiper-slide">
+        <img src="/images/map-3.jpeg" />
+      </div>
+      <div class="swiper-slide">
+        <img src="/images/map-4.jpeg" />
+      </div>
+      <div class="swiper-slide">
+        <img src="/images/map-5.jpeg" />
+      </div>
+      <!-- <div class="swiper-slide">
+        <img src="" />
+      </div>
+      <div class="swiper-slide">
+        <img src="" />
+      </div>
+      <div class="swiper-slide">
+        <img src="" />
+      </div>
+      <div class="swiper-slide">
+        <img src="" /> -->
     </div>
-    <script src="league.js"></script>
-  </body>
-</html>
+  </div>
+  <div class="swiper-pagination"></div>
+  </div>
 
+
+  <script src="league.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+</body>
+
+</html>
