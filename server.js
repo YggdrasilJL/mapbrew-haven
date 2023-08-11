@@ -40,7 +40,7 @@ initializePassport(passport,
   )
 
 app.set("view-engine", "ejs")
-app.use(express.urlencoded({extended: false}))
+
 app.use(flash())
 app.use(session({
   secret: "secret",
@@ -105,4 +105,3 @@ next()
 
 
 
-app.listen(3001)
