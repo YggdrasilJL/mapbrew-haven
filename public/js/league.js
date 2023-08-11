@@ -7,7 +7,6 @@ new Swiper('#swiper-1', {
     },
     keyboard: {
         enabled: true,
-        onlyInViewport: true
     },
     lazyLoading: true,
     loop: true

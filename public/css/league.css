@@ -12,12 +12,15 @@ body {
 }
 
 .swiper {
+    display: flex;
     width: 1000px;
     height: auto;
+    justify-content: center;
+    align-items: center;
 }
 
 .swiper-slide {
-    display: flex;
+    display:contents;
     justify-content: center;
     align-items: center;
     background-position: center;
@@ -27,7 +30,6 @@ body {
 .swiper-slide img {
     display: block;
     max-width: 100%;
-    height: 100%;
     object-fit: contain;
 }
 
