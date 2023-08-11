@@ -6,7 +6,6 @@ body {
 body {
     background: #eee;
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 14px;
     color: #000;
     margin: 0;
     padding: 0;
@@ -14,13 +13,10 @@ body {
 
 .swiper {
     width: 100%;
-    padding-top: 50px;
-    padding-bottom: 50px;
 }
 
 .swiper-slide {
     background-position: center;
-    width: 300px;
     height: 300px;
 }
 
