@@ -2,22 +2,6 @@ const path = require('path');
 const express = require('express');
 const session = require('express-session');
 const routes = require('./controllers');
-
-const sequelize = require('./config/connection');
-
-const app = express();
-const PORT = process.env.PORT || 3001;
-
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.use(routes);
-
-if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config();
-}
-
 const methodOverride = require('method-override');
 
 const users = [];
@@ -32,8 +16,15 @@ initializePassport(
   (id) => users.find((user) => user.id === id)
 );
 
+const sequelize = require('./config/connection');
+
+const app = express();
+const PORT = process.env.PORT || 3001;
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
 app.set('view-engine', 'ejs');
-app.use(express.urlencoded({ extended: false }));
 app.use(flash());
 app.use(
   session({
@@ -48,6 +39,12 @@ app.use(passport.session());
 app.get('/', checkAuthenticated, (req, res) => {
   res.render('index.ejs', { name: req.user.name });
 });
+
+app.use(routes);
+
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
 
 app.get('/login', checknotAuthenticated, (req, res) => {
   res.render('login.ejs');
