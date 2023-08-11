@@ -58,8 +58,15 @@
 
 new Swiper('#swiper-1', {
     effect: 'fade',
+    slidesPerView: 'auto',
     pagination: {
         el: '#swiper-1 .swiper-pagination',
         clickable: true
-    }
+    },
+    keyboard: {
+        enabled: true,
+        onlyInViewport: true
+    },
+    lazyLoading: true,
+    loop: true
 });
