@@ -39,19 +39,23 @@ reviewForm.addEventListener('submit', (e) => {
         .catch((err) => console.error(err));
 });
 
-var swiper = new Swiper(".mySwiper", {
-    effect: "coverflow",
-    grabCursor: true,
-    centeredSlides: true,
-    slidesPerView: "auto",
-    coverflowEffect: {
-        rotate: 50,
-        stretch: 0,
-        depth: 100,
-        modifier: 1,
-        slideShadows: true,
-    },
-    pagination: {
-        el: ".swiper-pagination",
-    },
+// let swiper = new Swiper(".mySwiper", {
+//     effect: "coverflow",
+//     grabCursor: true,
+//     centeredSlides: true,
+//     slidesPerView: "auto",
+//     coverflowEffect: {
+//         rotate: 50,
+//         stretch: 0,
+//         depth: 100,
+//         modifier: 1,
+//         slideShadows: true,
+//     },
+//     pagination: {
+//         el: ".swiper-pagination",
+//     },
+// });
+
+new Swiper('#swiper-1', {
+    effect: 'fade'
 });
