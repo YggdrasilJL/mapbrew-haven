@@ -53,19 +53,3 @@ reviewForm.addEventListener('submit', (e) => {
         .then((data) => alert(`Review added! Review ID: ${data.body.review_id}`))
         .catch((err) => console.error(err));
 });
-
-
-// new Swiper('#swiper-1', {
-//     effect: 'fade',
-//     slidesPerView: 'auto',
-//     pagination: {
-//         el: '#swiper-1 .swiper-pagination',
-//         clickable: true
-//     },
-//     keyboard: {
-//         enabled: true,
-//         onlyInViewport: true
-//     },
-//     lazyLoading: true,
-//     loop: true
-// });

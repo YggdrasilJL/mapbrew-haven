@@ -12,7 +12,8 @@ body {
 }
 
 .swiper {
-    width: 100%;
+    width: 1000px;
+    height: auto;
 }
 
 .swiper-slide {
@@ -26,14 +27,17 @@ body {
 .swiper-slide img {
     display: block;
     max-width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: contain;
 }
 
 
 #swiper-1 .swiper-pagination-bullet {
+    opacity: 1;
     width: .75rem;
     height: .75rem;
     margin: 0 .375rem;
+    background-color: #36454f;
 }
 
 #swiper-1 .swiper-pagination-bullet-active {
