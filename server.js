@@ -1,3 +1,6 @@
+const sequelize = require('./config/connection');
+const sequelizeStore = require('connect-session-sequelize')(session.Store);
+
 const path = require('path');
 const express = require('express');
 const session = require('express-session');
@@ -16,9 +19,17 @@ initializePassport(
   (id) => users.find((user) => user.id === id)
 );
 
-const sequelize = require('./config/connection');
-
 const app = express();
+const sess = {
+  secret: 'secret here',
+  cookie: {},
+  resave: false,
+  store: new sequelizeStore({
+    db: sequelize,
+  }),
+};
+app.use(session(sess));
+
 const PORT = process.env.PORT || 3001;
 
 app.use(express.json());
@@ -26,13 +37,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('view-engine', 'ejs');
 app.use(flash());
-app.use(
-  session({
-    secret: 'secret',
-    resave: false,
-    saveUninitialized: false,
-  })
-);
 app.use(methodOverride('_method'));
 app.use(passport.initialize());
 app.use(passport.session());
