@@ -22,8 +22,8 @@ var layers = [
 //Select tile from the Tiles grid
 tilesetContainer.addEventListener('mousedown', (event) => {
   selection = getCoords(event);
-  tilesetSelection.style.left = selection[0] * 128 + 'px';
-  tilesetSelection.style.top = selection[1] * 128 + 'px';
+  tilesetSelection.style.left = selection[0] * 64 + 'px';
+  tilesetSelection.style.top = selection[1] * 64 + 'px';
 });
 
 //Handler for placing new tiles on the map
@@ -61,7 +61,7 @@ function getCoords(e) {
   const { x, y } = e.target.getBoundingClientRect();
   const mouseX = e.clientX - x;
   const mouseY = e.clientY - y;
-  return [Math.floor(mouseX / 128), Math.floor(mouseY / 128)];
+  return [Math.floor(mouseX / 64), Math.floor(mouseY / 64)];
 }
 
 //converts data to image:data string and pipes into new browser tab
@@ -98,7 +98,7 @@ function draw() {
   var ctx = canvas.getContext('2d');
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  var size_of_crop = 128;
+  var size_of_crop = 64;
 
   layers.forEach((layer) => {
     Object.keys(layer).forEach((key) => {
@@ -109,12 +109,12 @@ function draw() {
 
       ctx.drawImage(
         tilesetImage,
-        tilesheetX * 128,
-        tilesheetY * 128,
+        tilesheetX * 64,
+        tilesheetY * 64,
         size_of_crop,
         size_of_crop,
-        positionX * 128,
-        positionY * 128,
+        positionX * 64,
+        positionY * 64,
         size_of_crop,
         size_of_crop
       );
@@ -127,4 +127,4 @@ tilesetImage.onload = function () {
   draw();
   setLayer(0);
 };
-tilesetImage.src = '../assets/images/newset.png';
+tilesetImage.src = '../assets/images/tilesheet1.png';
