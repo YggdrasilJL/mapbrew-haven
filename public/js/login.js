@@ -8,30 +8,30 @@ let password = document.getElementById('password');
 let newpassword = document.getElementById('newPassword');
 let confirmpassword = document.getElementById('confirmPassword');
 
-lockicon.onclick = function() {
-    if(password.type == 'password'){
+lockicon.onclick = function () {
+    if (password.type == 'password') {
         password.type = 'text';
-        lockicon.src= '../assets/images/unlock.png';
+        lockicon.src = '../assets/images/unlock.png';
     } else {
         password.type = 'password';
         lockicon.src = '../assets/images/lock.png';
     }
 };
 
-newlockicon.onclick = function() {
-    if(newpassword.type == 'password'){
+newlockicon.onclick = function () {
+    if (newpassword.type == 'password') {
         newpassword.type = 'text';
-        newlockicon.src= '../assets/images/unlock.png';
+        newlockicon.src = '../assets/images/unlock.png';
     } else {
         newpassword.type = 'password';
         newlockicon.src = '../assets/images/lock.png';
     }
 };
 
-lockicon2.onclick = function() {
-    if(confirmpassword.type == 'password'){
+lockicon2.onclick = function () {
+    if (confirmpassword.type == 'password') {
         confirmpassword.type = 'text';
-        lockicon2.src= '../assets/images/unlock.png';
+        lockicon2.src = '../assets/images/unlock.png';
     } else {
         confirmpassword.type = 'password';
         lockicon2.src = '../assets/images/lock.png';
@@ -54,3 +54,17 @@ document.getElementById('openModalBtn').addEventListener('click', openModal);
 
 // Attach the closeModal function to the close button click event
 document.getElementById('closeModalBtn').addEventListener('click', closeModal);
+
+document.addEventListener("DOMContentLoaded", function () {
+    const buttonClickSound = document.getElementById("buttonClickSound");
+    buttonClickSound.volume = 0.5;
+
+    const buttons = document.querySelectorAll("#navButton, #openModalBtn, #forgotpassword button, #userSubmit");
+    buttons.forEach(button => {
+        button.addEventListener("click", function () {
+            buttonClickSound.currentTime = 0; // Rewind to the beginning of the audio
+            buttonClickSound.playbackRate = 2.5;
+            buttonClickSound.play(); // Play the audio
+        });
+    });
+});

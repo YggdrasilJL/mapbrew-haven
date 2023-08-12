@@ -97,7 +97,7 @@ function draw() {
    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
    var size_of_crop = 32;
-   
+
    layers.forEach((layer) => {
       Object.keys(layer).forEach((key) => {
          //Determine x/y position of this placement from key ("3-4" -> x=3, y=4)
@@ -122,10 +122,23 @@ function draw() {
 
 
 
-tilesetImage.onload = function() {
+tilesetImage.onload = function () {
    layers = defaultState;
    draw();
    setLayer(0);
 }
-tilesetImage.src = "../assets/images/newset.png" 
+tilesetImage.src = "../assets/images/newset.png"
 
+document.addEventListener("DOMContentLoaded", function () {
+   const buttonClickSound = document.getElementById("buttonClickSound");
+   buttonClickSound.volume = 0.5;
+
+   const buttons = document.querySelectorAll(".navButton, .button-as-link, .primary-button");
+   buttons.forEach(button => {
+      button.addEventListener("click", function () {
+         buttonClickSound.currentTime = 0; // Rewind to the beginning of the audio
+         buttonClickSound.playbackRate = 2.5;
+         buttonClickSound.play(); // Play the audio
+      });
+   });
+});

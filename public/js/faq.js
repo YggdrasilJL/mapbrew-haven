@@ -27,6 +27,20 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-  
+
   toggleAns();
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const buttonClickSound = document.getElementById("buttonClickSound");
+  buttonClickSound.volume = 0.5;
+
+  // Add event listeners to the images
+  const images = document.querySelectorAll(".swiper-slide img");
+  images.forEach(image => {
+    image.addEventListener("click", function () {
+      buttonClickSound.currentTime = 2.5; // Rewind to the beginning of the audio
+      buttonClickSound.play(); // Play the audio
+    });
+  });
 });

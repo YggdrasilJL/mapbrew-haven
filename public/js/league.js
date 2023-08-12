@@ -52,3 +52,15 @@ reviewForm.addEventListener('submit', (e) => {
         .then((data) => alert(`Review added! Review ID: ${data.body.review_id}`))
         .catch((err) => console.error(err));
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const buttonClickSound = document.getElementById("buttonClickSound");
+
+    const buttons = document.querySelectorAll(".navButton, #openModalBtn, #forgotpassword button, #userSubmit");
+    buttons.forEach(button => {
+        button.addEventListener("click", function () {
+            buttonClickSound.currentTime = 0; // Rewind to the beginning of the audio
+            buttonClickSound.play(); // Play the audio
+        });
+    });
+});
