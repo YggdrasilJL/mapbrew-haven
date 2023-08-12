@@ -127,4 +127,4 @@ tilesetImage.onload = function () {
   draw();
   setLayer(0);
 };
-tilesetImage.src = '../assets/images/tilesheet1.png';
+tilesetImage.src = '../assets/images/tilesheet3.png';
