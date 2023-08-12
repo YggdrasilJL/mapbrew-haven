@@ -37,7 +37,7 @@ router.post('/login', async (req, res) => {
     const { user_name, password } = req.body;
 
     const user = await User.findOne({
-      where: user_name,
+      where: { user_name },
     });
 
     if (!user) {
@@ -45,7 +45,7 @@ router.post('/login', async (req, res) => {
       return;
     }
 
-    const validPw = await user.checkPassword(req.body.password);
+    const validPw = await user.checkPassword(password);
 
     if (!validPw) {
       res.status(400).json({ message: 'Invalid Credentials' });
@@ -59,9 +59,8 @@ router.post('/login', async (req, res) => {
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: 'Error logging in' });
+    res.redirect('/login');
   }
-
-  res.redirect('/login');
 });
 
 router.post('/logout', (req, res) => {

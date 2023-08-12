@@ -2,7 +2,8 @@ const router = require('express').Router();
 
 // the root url
 router.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/index.html'));
+  // res.sendFile(path.join(__dirname, '../public/index.html'));
+  res.send('hello world')
 });
 
 // mapbuilder page
