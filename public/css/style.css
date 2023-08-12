@@ -222,12 +222,13 @@ input[type='password']:focus {
   flex-direction: column;
   align-items: center;
   margin-right: 20px;
+  background: #7a7a7a67;
 }
 
-canvas {
+/* canvas {
   background: #7a7a7a67;
   margin: auto;
-}
+} */
 
 h2 {
   font-family: 'Kalam', cursive;
@@ -260,9 +261,9 @@ h2 {
   margin-top: 20px;
 }
 
-canvas {
+/* canvas {
   background: #7a7a7a67;
-}
+} */
 
 .layers {
   display: flex;

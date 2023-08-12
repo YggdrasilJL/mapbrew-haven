@@ -1,13 +1,13 @@
-var canvas = document.querySelector('canvas');
-var tilesetContainer = document.querySelector('.tileset-container');
-var tilesetSelection = document.querySelector('.tileset-container_selection');
-var tilesetImage = document.querySelector('#tileset-source');
+const canvas = document.querySelector('canvas');
+const tilesetContainer = document.querySelector('.tileset-container');
+const tilesetSelection = document.querySelector('.tileset-container_selection');
+const tilesetImage = document.querySelector('#tileset-source');
 
-var selection = [0, 0]; //Which tile we will paint from the menu
+let selection = [0, 0]; //Which tile we will paint from the menu
 
-var isMouseDown = false;
-var currentLayer = 0;
-var layers = [
+let isMouseDown = false;
+let currentLayer = 0;
+let layers = [
   //Bottom
   {
     //Structure is "x-y": ["tileset_x", "tileset_y"]
@@ -28,8 +28,8 @@ tilesetContainer.addEventListener('mousedown', (event) => {
 
 //Handler for placing new tiles on the map
 function addTile(mouseEvent) {
-  var clicked = getCoords(event);
-  var key = clicked[0] + '-' + clicked[1];
+  let clicked = getCoords(mouseEvent);
+  let key = clicked[0] + '-' + clicked[1];
 
   if (mouseEvent.shiftKey) {
     delete layers[currentLayer][key];
@@ -64,16 +64,42 @@ function getCoords(e) {
   return [Math.floor(mouseX / 64), Math.floor(mouseY / 64)];
 }
 
-//converts data to image:data string and pipes into new browser tab
+//converts data to url and allows user to download
 function exportImage() {
-  var data = canvas.toDataURL();
-  var image = new Image();
-  image.src = data;
-
-  var w = window.open('');
-  w.document.write(image.outerHTML);
+  const canvas = document.querySelector('canvas');
+  const data = canvas.toDataURL();
+  const download = document.createElement('a');
+  download.href = data;
+  download.download = 'custom-map.png';
+  download.click();
 }
 
+document.querySelector('.primary-button').addEventListener('click', () => {
+  let isEmpty = isCanvasEmpty(canvas);
+  if (!isEmpty) {
+    exportImage();
+  } else {
+    return;
+  }
+});
+
+// checks if the content of the canvas is empty or not
+function isCanvasEmpty(canvas) {
+  const canvasContext = canvas.getContext('2d');
+  const imageData = canvasContext.getImageData(
+    0,
+    0,
+    canvas.width,
+    canvas.height
+  ).data;
+
+  for (let i = 0; i < imageData.length; i += 4) {
+    if (imageData[i + 3] !== 0) {
+      return false;
+    }
+  }
+  return true;
+}
 //Reset state to empty
 function clearCanvas() {
   layers = [{}, {}, {}];
@@ -85,7 +111,7 @@ function setLayer(newLayer) {
   currentLayer = newLayer;
 
   //Update the UI to show updated layer
-  var oldActiveLayer = document.querySelector('.layer.active');
+  let oldActiveLayer = document.querySelector('.layer.active');
   if (oldActiveLayer) {
     oldActiveLayer.classList.remove('active');
   }
@@ -95,17 +121,17 @@ function setLayer(newLayer) {
 }
 
 function draw() {
-  var ctx = canvas.getContext('2d');
+  let ctx = canvas.getContext('2d');
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  var size_of_crop = 64;
+  let size_of_crop = 64;
 
   layers.forEach((layer) => {
     Object.keys(layer).forEach((key) => {
       //Determine x/y position of this placement from key ("3-4" -> x=3, y=4)
-      var positionX = Number(key.split('-')[0]);
-      var positionY = Number(key.split('-')[1]);
-      var [tilesheetX, tilesheetY] = layer[key];
+      let positionX = Number(key.split('-')[0]);
+      let positionY = Number(key.split('-')[1]);
+      let [tilesheetX, tilesheetY] = layer[key];
 
       ctx.drawImage(
         tilesetImage,
@@ -123,7 +149,7 @@ function draw() {
 }
 
 tilesetImage.onload = function () {
-  layers = defaultState;
+  layers;
   draw();
   setLayer(0);
 };
