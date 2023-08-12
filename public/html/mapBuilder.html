@@ -1,64 +1,81 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8" />
-<meta name="" viewport content="width=device-width, initial-scale=1.0" />
-<title>Map Builder | Mapbrew</title>
-<link
-href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap"
-rel="stylesheet"
-/>
-<link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/reset.css" />
-<link rel="stylesheet" href="../css/style.css" />
-</head>
-<body>
-  <nav>
-    <div class="center">
-      <a href="../index.html"><p id="navTitle">Mapbrew</p></a>
-    </div>
-    <div class="right">
-    <button class="navButton"><a href="login.html">Login</a></button>
-    <button class="navButton">
-      <a href="mapBuilder.html">Map Builder</a>
-    </button>
-    <button class="navButton"><a href="league.html">League</a></button>
-    <button class="navButton"><a href="faq.html">FAQ</a></button>
-  </div>
-  </nav>
-  <div class="mainContainer">
-    <div class="mapContainer">
-      <h2>Map</h2>
-      <div class="canvasContainer">
-      <!-- Canvas -->
-      <canvas width="640" height="640">
-      </canvas>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="" viewport content="width=device-width, initial-scale=1.0" />
+    <title>Map Builder | Mapbrew</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kalam&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="center">
+        <a href="../index.html"><p id="navTitle">Mapbrew</p></a>
       </div>
-      <div class="canvasControls">
-         <button class="button-as-link" onclick="clearCanvas()">Clear Canvas</button>
-         <button class="primary-button" onclick="exportImage()">Export Image</button>
+      <div class="right">
+        <button class="navButton"><a href="login.html">Login</a></button>
+        <button class="navButton">
+          <a href="mapBuilder.html">Map Builder</a>
+        </button>
+        <button class="navButton"><a href="league.html">League</a></button>
+        <button class="navButton"><a href="faq.html">FAQ</a></button>
       </div>
-             <div class="layersContainer">
-                <div>
-                   <label>Editing Layer:</label>
-                   <ul class="layers">
-                      <li><button onclick="setLayer(2)" class="layer" tile-layer="2">Top Layer</button></li>
-                      <li><button onclick="setLayer(1)" class="layer" tile-layer="1">Middle Layer</button></li>
-                      <li><button onclick="setLayer(0)" class="layer" tile-layer="0">Bottom Layer</button></li>
-                   </ul>
-                </div>
-             </div>
-    </div>
-    <div class="tileContainer">
-      <h2>Tiles</h1>
-        
-          <div class="tileset-container">
-             <img id="tileset-source" src="../assets/images/tilesheet3.png" >
-             <div class="tileset-container_selection"></div>
+    </nav>
+    <div class="mainContainer">
+      <div class="mapContainer">
+        <h2>Map</h2>
+        <div class="canvasContainer">
+          <!-- Canvas -->
+          <canvas width="640" height="640"> </canvas>
+        </div>
+        <div class="canvasControls">
+          <button class="button-as-link" onclick="clearCanvas()">
+            Clear Canvas
+          </button>
+          <button class="primary-button" onclick="exportImage()">
+            Export Image
+          </button>
+        </div>
+        <div class="layersContainer">
+          <div>
+            <label>Editing Layer:</label>
+            <ul class="layers">
+              <li>
+                <button onclick="setLayer(2)" class="layer" tile-layer="2">
+                  Top Layer
+                </button>
+              </li>
+              <li>
+                <button onclick="setLayer(1)" class="layer" tile-layer="1">
+                  Middle Layer
+                </button>
+              </li>
+              <li>
+                <button onclick="setLayer(0)" class="layer" tile-layer="0">
+                  Bottom Layer
+                </button>
+              </li>
+            </ul>
           </div>
-       
+        </div>
+      </div>
+      <div class="tileContainer">
+        <h2>Tiles</h2>
+
+        <div class="tileset-container">
+          <img id="tileset-source" src="../assets/images/tilesheet3.png" />
+          <div class="tileset-container_selection"></div>
+        </div>
+      </div>
     </div>
-  </div>
-</body>
-<script src="../js/mapbuilder.js"></script>
+  </body>
+  <script src="../js/mapbuilder.js"></script>
 </html>
