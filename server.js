@@ -5,11 +5,13 @@ const sequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const path = require('path');
 const routes = require('./controllers');
-const methodOverride = require('method-override');
+
 
 const flash = require('express-flash');
-
 const app = express();
+app.use(express.static(path.join(__dirname, 'public')));
+
+
 const sess = {
   secret: 'secret here',
   cookie: {
@@ -28,20 +30,45 @@ const PORT = process.env.PORT || 3001;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
+
 app.set('view-engine', 'ejs');
 app.use(flash());
-app.use(methodOverride('_method'));
-// app.get('/', checkAuthenticated, (req, res) => {
-//   res.render('index.ejs', { name: req.user.name });
-// });
 
-app.use(routes);
+app.get('/', (req, res) => {
+   res.render('index.ejs');
+});
 
-if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config();
-}
+app.get('/index', (req, res) => {
+  res.render('index.ejs');
+});
 
+app.get("/login",(req, res)=> {
+  res.render("login.ejs")
+ })
+
+app.get("/mapbuilder",(req, res)=> {
+  res.render("mapbuilder.ejs")
+ })
+
+app.get("/league",(req, res)=> {
+  res.render("league.ejs")
+ })
+
+app.get("/login",(req, res)=> {
+  res.render("mapbuilder.ejs")
+ })
+
+
+app.get("/faq",(req, res)=> {
+  res.render("faq.ejs")
+ })
+
+
+ app.use(routes)
+
+//app.get("/login",(req, res)=> {
+  //res.render("login.ejs")
+ //})
 // app.get('/login', checknotAuthenticated, (req, res) => {
 //   res.render('login.ejs');
 // });

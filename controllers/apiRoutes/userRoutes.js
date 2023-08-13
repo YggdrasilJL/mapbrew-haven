@@ -2,6 +2,10 @@ const router = require('express').Router();
 const { v4: uuid } = require('uuid');
 const bcrypt = require('bcrypt');
 const User = require('../../models/User');
+
+
+
+
 // get all users
 router.get('/', async (req, res) => {
   const allUsers = await User.findAll();
