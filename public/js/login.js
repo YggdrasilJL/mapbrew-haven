@@ -38,20 +38,6 @@ lockicon2.onclick = function () {
     }
 };
 
-document.addEventListener("DOMContentLoaded", function () {
-    const buttonClickSound = document.getElementById("buttonClickSound");
-    buttonClickSound.volume = 0.5;
-
-    const buttons = document.querySelectorAll(".navButton, .button-as-link, .primary-button");
-    buttons.forEach(button => {
-        button.addEventListener("click", function () {
-            buttonClickSound.currentTime = 0; // Rewind to the beginning of the audio
-            buttonClickSound.playbackRate = 2.5;
-            buttonClickSound.play(); // Play the audio
-        });
-    });
-});
-
 
 //  Signup Modal 
 
@@ -69,3 +55,19 @@ document.getElementById('openModalBtn').addEventListener('click', openModal);
 
 // Attach the closeModal function to the close button click event
 document.getElementById('closeModalBtn').addEventListener('click', closeModal);
+
+
+
+//document.addEventListener("DOMContentLoaded", function () {
+    //const buttonClickSound = document.getElementById("buttonClickSound");
+   // buttonClickSound.volume = 0.5;
+
+    //const buttons = document.querySelectorAll(".navButton, .button-as-link, .primary-button");
+    //buttons.forEach(button => {
+      //  button.addEventListener("click", function () {
+      //      buttonClickSound.currentTime = 0; // Rewind to the beginning of the audio
+      //      buttonClickSound.playbackRate = 2.5;
+      //      buttonClickSound.play(); // Play the audio
+     //   });
+  //  });
+//});

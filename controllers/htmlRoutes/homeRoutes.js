@@ -1,7 +1,10 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 const withauth = require('../../utils/auth');
-
+const path = require('path');
+const express = require('express');
+const app = express();
+app.set('view-engine', 'ejs')
 
  //login page
 router.get('/', withauth, async (req, res) => {
@@ -13,25 +16,25 @@ router.get('/', withauth, async (req, res) => {
 
     const users = userData.map((project) => project.get({ plain: true }))
 
+    
     res.render('homepage', {
       users,
      logged_in: req.session.logged_in,
     });
   } catch (err) {
-    res.status(500).json(err);
+   res.status(500).json(err);
   }
 });
 
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
-    res.redirect('/');
+  res.redirect('/');
     return;
   }
 
   res.render('login');
 });
 
-// faq page
 router.get('/faq', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/html/faq.html'));
 });
@@ -43,7 +46,7 @@ router.get('*', (req, res) => {
 
 // mapbuilder page
 router.get('/map', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/html/mapBuilder.html'));
+  res.sendFile(path.join(__dirname, '.././public/html/mapBuilder.html'));
 });
 
 module.exports = router;
