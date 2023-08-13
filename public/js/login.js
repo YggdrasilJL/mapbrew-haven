@@ -59,15 +59,15 @@ document.getElementById('closeModalBtn').addEventListener('click', closeModal);
 
 
 //document.addEventListener("DOMContentLoaded", function () {
-    //const buttonClickSound = document.getElementById("buttonClickSound");
-   // buttonClickSound.volume = 0.5;
+//const buttonClickSound = document.getElementById("buttonClickSound");
+// buttonClickSound.volume = 0.5;
 
-    //const buttons = document.querySelectorAll(".navButton, .button-as-link, .primary-button");
-    //buttons.forEach(button => {
-      //  button.addEventListener("click", function () {
-      //      buttonClickSound.currentTime = 0; // Rewind to the beginning of the audio
-      //      buttonClickSound.playbackRate = 2.5;
-      //      buttonClickSound.play(); // Play the audio
-     //   });
-  //  });
+//const buttons = document.querySelectorAll(".navButton, .button-as-link, .primary-button");
+//buttons.forEach(button => {
+//  button.addEventListener("click", function () {
+//      buttonClickSound.currentTime = 0; // Rewind to the beginning of the audio
+//      buttonClickSound.playbackRate = 2.5;
+//      buttonClickSound.play(); // Play the audio
+//   });
+//  });
 //});

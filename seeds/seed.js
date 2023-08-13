@@ -23,18 +23,3 @@ const connection = mysql.createConnection({
 
 connection.connect()
 
-// rando admin password
-const psw = Math.random()
-    .toString(32)
-    .substring(3)
-const hash = bcrypt.hashSync(pasw, 10)
-console.log('Running seed')
-
-//query
-connection.query(seedQuery, [hash], err => {
-    if (err) {
-        throw err
-    }
-    console.log('SQL seeeeeed complete. This is the password:' + psw)
-    connection.end()
-})

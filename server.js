@@ -90,6 +90,26 @@ app.use(routes)
 //   }
 //   next();
 // }
+// app.post('/register', async (req, res) => {
+//   try {
+//     const { username, email, password } = req.body;
+//     const hashedPassword = await bcrypt.hash(password, 10);
+
+//     const newUser = await User.create({
+//       username,
+//       email,
+//       password: hashedPassword,
+//     });
+
+//     req.session.save(() => {
+//       req.session.loggedIn = true;
+//       res.status(200).json(newUser); // Sending the new user data as JSON response
+//     });
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err); // Sending an error response
+//   }
+// });
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log(`Now listening on ${PORT}.`));
