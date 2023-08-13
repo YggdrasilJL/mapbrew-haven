@@ -33,38 +33,12 @@ app.use(express.urlencoded({ extended: true }));
 
 app.set('view-engine', 'ejs');
 app.use(flash());
-
-app.get('/', (req, res) => {
-   res.render('index.ejs');
-});
-
-app.get('/index', (req, res) => {
-  res.render('index.ejs');
-});
-
-app.get("/login",(req, res)=> {
-  res.render("login.ejs")
- })
-
-app.get("/mapbuilder",(req, res)=> {
-  res.render("mapbuilder.ejs")
- })
-
-app.get("/league",(req, res)=> {
-  res.render("league.ejs")
- })
-
-app.get("/login",(req, res)=> {
-  res.render("mapbuilder.ejs")
- })
+app.use(routes)
 
 
-app.get("/faq",(req, res)=> {
-  res.render("faq.ejs")
- })
 
 
- app.use(routes)
+
 
 //app.get("/login",(req, res)=> {
   //res.render("login.ejs")
