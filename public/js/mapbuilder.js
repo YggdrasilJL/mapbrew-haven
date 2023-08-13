@@ -73,12 +73,16 @@ function exportImage() {
   download.download = 'custom-map.png';
   download.click();
 }
-
+// if the canvas is empty it will
 document.querySelector('.primary-button').addEventListener('click', () => {
   let isEmpty = isCanvasEmpty(canvas);
   if (!isEmpty) {
     exportImage();
+    setTimeout(() => {
+      displayPopUp('Map exported!', 'success');
+    }, 1000);
   } else {
+    displayPopUp('Cannot export empty canvas', 'danger');
     return;
   }
 });
@@ -104,6 +108,21 @@ function isCanvasEmpty(canvas) {
 function clearCanvas() {
   layers = [{}, {}, {}];
   draw();
+}
+
+function displayPopUp(message, type) {
+  const alertPlaceholder = document.getElementById('liveAlertPlaceholder');
+  alertPlaceholder.innerHTML = '';
+  const wrapper = document.createElement('div');
+  wrapper.innerHTML = [
+    `<div class="fade alert alert-${type}" role="alert">`,
+    `   <div>${message}</div>`,
+    '</div>',
+  ].join('');
+
+  const alertElement = wrapper.firstChild;
+  alertElement.classList.add('show');
+  alertPlaceholder.appendChild(wrapper);
 }
 
 function setLayer(newLayer) {
