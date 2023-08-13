@@ -1,91 +1,40 @@
 const router = require('express').Router();
-const { v4: uuid } = require('uuid');
-const bcrypt = require('bcrypt');
-const User = require('../../models/User');
-
-router.post('/', async (req, res) => {
-  try {
-    const dbUserData = await User.create({
-      username: req.body.username,
-      email: req.body.email,
-      password: req.body.confirmPassword,
-    });
-
-    req.session.save(() => {
-      req.session.loggedIn = true;
-
-      res.status(200).json(dbUserData);
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
-
-
-// get all users
-router.get('/', async (req, res) => {
-  const allUsers = await User.findAll();
-  res.json(allUsers);
-});
-// get user by id
-router.get('/:id', async (req, res) => {
-  const user = await User.findByPk(req.params.id);
-  res.json(user);
-});
-
-router.post('/register', async (req, res) => {
-  try {
-    const { user_name, email, password } = req.body;
-    const hashedPw = await bcrypt.hash(password, 10);
-
-    const newUser = await User.create({
-      id: uuid(),
-      user_name,
-      email,
-      password: hashedPw,
-    });
-
-    res.status(201).json({ message: 'User registered.' });
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ message: 'Error registering User.' });
-  }
-});
+const { User } = require('../../models');
 
 router.post('/login', async (req, res) => {
   try {
-    const { user_name, password } = req.body;
+    const userData = await User.findOne({ where: { email: req.body.email } });
 
-    const user = await User.findOne({
-      where: { user_name },
-    });
-
-    if (!user) {
-      res.status(400).json({ message: 'Invalid Credentials' });
+    if (!userData) {
+      res
+        .status(400)
+        .json({ message: 'Incorrect email or password, please try again' });
       return;
     }
 
-    const validPw = await user.checkPassword(password);
+    const validPassword = await userData.checkPassword(req.body.password);
 
-    if (!validPw) {
-      res.status(400).json({ message: 'Invalid Credentials' });
+    if (!validPassword) {
+      res
+        .status(400)
+        .json({ message: 'Incorrect email or password, please try again' });
       return;
     }
+
     req.session.save(() => {
-      req.session.loggedIn = true;
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
 
-      res.status(200).json({ user: user, message: "You're now logged in." });
+      res.json({ user: userData, message: 'You are now logged in!' });
     });
+
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ message: 'Error logging in' });
-    res.redirect('/login');
+    res.status(400).json(err);
   }
 });
 
 router.post('/logout', (req, res) => {
-  if (req.session.loggedIn) {
+  if (req.session.logged_in) {
     req.session.destroy(() => {
       res.status(204).end();
     });

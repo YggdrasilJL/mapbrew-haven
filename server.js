@@ -1,7 +1,7 @@
 const express = require('express');
 const session = require('express-session');
 const sequelize = require('./config/connection');
-const sequelizeStore = require('connect-session-sequelize')(session.Store);
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const path = require('path');
 const routes = require('./controllers');
@@ -16,11 +16,11 @@ const sess = {
   secret: 'secret here',
   cookie: {
     maxAge: 1800000,
-    name: 'myServerID',
+    // name: 'myServerID',
   },
   resave: false,
   saveUninitialized: true,
-  store: new sequelizeStore({
+  store: new SequelizeStore({
     db: sequelize,
   }),
 };
@@ -35,14 +35,9 @@ app.set('view-engine', 'ejs');
 app.use(flash());
 app.use(routes)
 
-
-
-
-
-
 //app.get("/login",(req, res)=> {
-  //res.render("login.ejs")
- //})
+//res.render("login.ejs")
+//})
 // app.get('/login', checknotAuthenticated, (req, res) => {
 //   res.render('login.ejs');
 // });
