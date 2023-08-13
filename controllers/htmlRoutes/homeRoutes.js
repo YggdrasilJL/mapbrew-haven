@@ -1,10 +1,11 @@
 const router = require('express').Router();
 const { User } = require('../../models');
+const bcrypt = require('bcrypt');
 const withauth = require('../../utils/auth');
 const path = require('path');
 const express = require('express');
 const app = express();
-app.set('view-engine', 'ejs')
+app.set('view-engine', 'ejs');
 
 // login page
 router.get('/', withauth, async (req, res) => {
@@ -14,8 +15,7 @@ router.get('/', withauth, async (req, res) => {
       order: [['name', 'ASC']],
     });
 
-    const users = userData.map((project) => project.get({ plain: true }))
-
+    const users = userData.map((project) => project.get({ plain: true }));
 
     res.render('homepage', {
       users,
@@ -32,30 +32,27 @@ router.get('/login', (req, res) => {
     return;
   }
 
-  res.render('login');
+  res.render('login.ejs');
 });
 
 router.get('/', (req, res) => {
   res.render('index.ejs');
 });
 
-
 router.get('/index', (req, res) => {
   res.render('index.ejs');
 });
 
-
-router.get("/mapbuilder", (req, res) => {
-  res.render("mapbuilder.ejs")
-})
-
-router.get("/league", (req, res) => {
-  res.render("league.ejs")
+router.get('/mapbuilder', (req, res) => {
+  res.render('mapbuilder.ejs');
 });
 
+router.get('/league', (req, res) => {
+  res.render('league.ejs');
+});
 
-router.get("/faq", (req, res) => {
-  res.render("faq.ejs")
-})
+router.get('/faq', (req, res) => {
+  res.render('faq.ejs');
+});
 
 module.exports = router;
