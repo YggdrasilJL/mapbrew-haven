@@ -1,14 +1,14 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 const bcrypt = require('bcrypt');
-const withauth = require('../../utils/auth');
+const withAuth = require('../../utils/auth');
 const path = require('path');
 const express = require('express');
 const app = express();
 app.set('view-engine', 'ejs');
 
 // login page
-router.get('/', withauth, async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     const userData = await User.findAll({
       attributes: { exclude: ['password'] },
