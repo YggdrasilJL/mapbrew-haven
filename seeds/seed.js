@@ -7,16 +7,16 @@ const fs = require('bcrypt')
 require('dotenv').config()
 
 // seed query
-const seedQuery = fs.readFileSync('seed.sql',{
-encoding: 'utf-8',
+const seedQuery = fs.readFileSync('seed.sql', {
+    encoding: 'utf-8',
 })
 
 //connect to db
 const connection = mysql.createConnection({
-    host: process.env.DB_USER,
     user: process.env.DB_NAME,
+    host: process.env.DB_USER,
     password: process.env.DB_PASS,
-  
+
     multipleStatements: true,
 
 })
@@ -31,8 +31,8 @@ const hash = bcrypt.hashSync(pasw, 10)
 console.log('Running seed')
 
 //query
-connection.query(seedQuery, [hash], err =>{
-    if(err) {
+connection.query(seedQuery, [hash], err => {
+    if (err) {
         throw err
     }
     console.log('SQL seeeeeed complete. This is the password:' + psw)
