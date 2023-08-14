@@ -16,7 +16,7 @@ const sess = {
   secret: 'secret here',
   cookie: {
     maxAge: 1800000,
-    // name: 'myServerID',
+    name: 'myServerID',
   },
   resave: false,
   saveUninitialized: true,
