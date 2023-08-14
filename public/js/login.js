@@ -61,29 +61,29 @@ document.addEventListener('DOMContentLoaded', function () {
   const form = document.querySelector('form');
   form.addEventListener('submit', async function (event) {
     event.preventDefault();
+    // this isn't being hit because ejs is going straight to the route
+    const user_name = form.querySelector('input[name="user_name"]').value;
+    const email = form.querySelector('input[name="email"]').value;
+    const password = form.querySelector('input[name="password"]').value;
+    const userData = {
+      user_name: user_name,
+      email: email,
+      password: password,
+    };
+    try {
+      const response = await fetch('../server.js', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(userData),
+      });
+      const data = await response.json();
       document.location.replace('/login');
-    // const user_name = form.querySelector('input[name="user_name"]').value;
-    // const email = form.querySelector('input[name="email"]').value;
-    // const password = form.querySelector('input[name="password"]').value;
-    // const userData = {
-    //   user_name: user_name,
-    //   email: email,
-    //   password: password,
-    // };
-    // try {
-    //   const response = await fetch('../server.js', {
-    //     method: 'POST',
-    //     headers: {
-    //       'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify(userData),
-    //   });
-    //   const data = await response.json();
-    //   document.location.replace('/login');
-    //   // Process the response from the server (success/failure message, etc.)
-    // } catch (error) {
-    //   console.error('Error:', error);
-    // }
+      // Process the response from the server (success/failure message, etc.)
+    } catch (error) {
+      console.error('Error:', error);
+    }
   });
 });
 

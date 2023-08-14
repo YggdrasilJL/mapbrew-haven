@@ -29,7 +29,8 @@ router.post('/register', async (req, res) => {
     req.session.save(() => {
       req.session.loggedIn = true;
       //might want to save user id if we want too
-      res.status(200).json({ message: 'User registered.' });
+      // res.status(200).json({ message: 'User registered.' });
+      return res.redirect('/index')
     })
 
   } catch (err) {
