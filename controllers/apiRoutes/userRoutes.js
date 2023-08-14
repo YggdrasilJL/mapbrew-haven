@@ -16,11 +16,19 @@ router.get('/:id', async (req, res) => {
 
 router.post('/register', async (req, res) => {
   try {
+    console.log('Recieved registration request:', req.body);
+
     const { user_name, email, password } = req.body;
+    
+    if (password !== confirmPassword) {
+    res.status(400).json({message: 'Passwords do not match.'});
+    return;
+    };
+
     const hashedPw = await bcrypt.hash(password, 10);
 
     console.log('Hashed password:', hashedPw);
-    
+
     // const newUser = await User.create({
     //   id: uuid(),
     //   user_name,
