@@ -2,6 +2,7 @@ const express = require('express');
 const session = require('express-session');
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const bcrypt = require('bcrypt')
 
 const path = require('path');
 const routes = require('./controllers');
@@ -35,16 +36,41 @@ app.set('view-engine', 'ejs');
 app.use(flash());
 app.use(routes)
 
-//app.get("/login",(req, res)=> {
-//res.render("login.ejs")
-//})
-// app.get('/login', checknotAuthenticated, (req, res) => {
-//   res.render('login.ejs');
-// });
+app.get("/login",(req, res)=> {
+res.render("login.ejs")
+});
 
 // app.get('/register', checknotAuthenticated, (req, res) => {
 //   res.render('register.ejs');
 // });
+
+app.post('/login', async (req, res) => {
+  const { user_name, password } = req.body;
+
+  const user = await User.findOne({
+    where: { user_name },
+  });
+
+  if (!user) {
+    req.flash('error', 'Invalid Credentials');
+    res.redirect('/login');
+    return;
+  }
+
+  const validPw = await bcrypt.compare(password, user.password);
+
+  if (!validPw) {
+    req.flash('error', 'Invalid Credentials');
+    res.redirect('/login');
+    return;
+  }
+
+  req.session.loggedIn = true;
+  req.session.save(() => {
+    req.flash('success', "You're now logged in.");
+    res.redirect('/index'); // Redirect to the index page
+  });
+});
 
 // app.post(
 //   '/login',
