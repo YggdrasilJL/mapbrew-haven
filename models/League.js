@@ -46,6 +46,13 @@ League.init(
       defaultValue: DataTypes.NOW,
       allowNull: false,
     },
+    user_id: {
+      type: DataTypes.STRING,
+      references: {
+        model: 'user',
+        key: 'id'
+      },
+    },
   },
   {
     sequelize,
