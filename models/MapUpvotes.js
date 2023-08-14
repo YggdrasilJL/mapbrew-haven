@@ -15,7 +15,7 @@ MapUpvotes.init(
       type: DataTypes.STRING,
       allowNull: false,
       references: {
-        model: 'user',
+        model: 'User',
         key: 'id',
       },
     },
@@ -23,7 +23,7 @@ MapUpvotes.init(
       type: DataTypes.STING,
       allowNull: false,
       references: {
-        model: 'user_creations',
+        model: 'UserCreations',
         key: 'id',
       },
     },
@@ -31,7 +31,7 @@ MapUpvotes.init(
   {
     sequelize,
     underscored: true,
-    modelName: 'map_upvote',
+    modelName: 'MapUpvotes',
   }
 );
 

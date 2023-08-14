@@ -1,5 +1,5 @@
 const User = require('./User');
-// const UserCreations = require('./UserCreations');
+const UserCreations = require('./UserCreations');
 const League = require('./League');
 
 // User.hasMany(UserCreations, {
@@ -15,5 +15,5 @@ League.belongsTo(User, {
     foreignKey: 'user_id',
 });
 
-module.exports = { User, League };
-//  UserCreations
+module.exports = { User, UserCreations, League };
+// 
