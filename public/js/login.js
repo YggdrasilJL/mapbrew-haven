@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   };
 
-  document.querySelector('.loginform').addEventListener('.submit', loginFormHandler);
+  document.querySelector('.loginform').addEventListener('click', loginFormHandler);
 
   //  Signup Modal
 

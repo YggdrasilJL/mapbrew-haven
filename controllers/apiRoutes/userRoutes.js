@@ -59,18 +59,52 @@ router.post('/login', async (req, res) => {
       res.status(400).json({ message: 'Invalid Credentials' });
       return;
     }
-    
-    req.session.save(() => {
+
     req.session.loggedIn = true;
-    return res.redirect('/index');
-    res.status(200).json({ user: user, message: "You're now logged in." });
+    req.session.save(() => {
+      res.status(200).json({ user: user, message: "You're now logged in." });
+      // Or redirect here
+      res.redirect('/index');
     });
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: 'Error logging in' });
+    // Or redirect here
     res.redirect('/login');
   }
 });
+
+// router.post('/login', async (req, res) => {
+//   try {
+//     const { user_name, password } = req.body;
+
+//     const user = await User.findOne({
+//       where: { user_name },
+//     });
+
+//     if (!user) {
+//       res.status(400).json({ message: 'Invalid Credentials' });
+//       return;
+//     }
+
+//     const validPw = await user.checkPassword(password);
+
+//     if (!validPw) {
+//       res.status(400).json({ message: 'Invalid Credentials' });
+//       return;
+//     }
+    
+//     req.session.save(() => {
+//     req.session.loggedIn = true;
+//     return res.redirect('/index');
+//     res.status(200).json({ user: user, message: "You're now logged in." });
+//     });
+//   } catch (err) {
+//     console.error(err);
+//     res.status(500).json({ message: 'Error logging in' });
+//     res.redirect('/login');
+//   }
+// });
 
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
