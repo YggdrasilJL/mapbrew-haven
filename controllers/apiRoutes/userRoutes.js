@@ -29,7 +29,7 @@ router.post('/register', async (req, res) => {
     req.session.save(() => {
       req.session.loggedIn = true;
       //might want to save user id if we want too
-      req.session.user_id= newUser.id
+      req.session.user_id= newUser.id;
       // res.status(200).json({ message: 'User registered.' });
       return res.redirect('/index')
     })
@@ -59,10 +59,11 @@ router.post('/login', async (req, res) => {
       res.status(400).json({ message: 'Invalid Credentials' });
       return;
     }
+    
     req.session.save(() => {
-      req.session.loggedIn = true;
-      return res.redirect('/index')
-      // res.status(200).json({ user: user, message: "You're now logged in." });
+    req.session.loggedIn = true;
+    return res.redirect('/index');
+    res.status(200).json({ user: user, message: "You're now logged in." });
     });
   } catch (err) {
     console.error(err);

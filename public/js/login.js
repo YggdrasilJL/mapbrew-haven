@@ -53,16 +53,14 @@ document.addEventListener('DOMContentLoaded', function () {
       });
   
       if (response.ok) {
-        document.location.replace('/index');
+        document.location.replace('/');
       } else {
         alert('Failed to log in.');
       }
     }
   };
 
-  document
-  .querySelector('.loginform')
-  .addEventListener('submit', loginFormHandler);
+  document.querySelector('.loginform').addEventListener('.submit', loginFormHandler);
 
   //  Signup Modal
 
