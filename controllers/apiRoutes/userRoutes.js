@@ -29,12 +29,12 @@ router.post('/register', async (req, res) => {
 
     console.log('Hashed password:', hashedPw);
 
-    // const newUser = await User.create({
-    //   id: uuid(),
-    //   user_name,
-    //   email,
-    //   password: hashedPw,
-    // });
+    const newUser = await User.create({
+      id: uuid(),
+      user_name,
+      email,
+      password: hashedPw,
+    });
 
     res.status(201).json({ message: 'User registered.' });
   } catch (err) {

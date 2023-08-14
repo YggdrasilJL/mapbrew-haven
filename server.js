@@ -6,6 +6,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const path = require('path');
 const routes = require('./controllers');
 
+const User = require('./models/User');
 
 const flash = require('express-flash');
 const app = express();
@@ -35,9 +36,30 @@ app.set('view-engine', 'ejs');
 app.use(flash());
 app.use(routes)
 
-//app.get("/login",(req, res)=> {
-//res.render("login.ejs")
-//})
+app.post('/register', async (req, res) => {
+  try {
+    const { username, email, password } = req.body;
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    const newUser = await User.create({
+      username,
+      email,
+      password: hashedPassword,
+    });
+
+    req.session.save(() => {
+      req.session.loggedIn = true;
+      res.status(200).json(newUser); // Sending the new user data as JSON response
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err); // Sending an error response
+  }
+});
+
+// app.get("/login",(req, res)=> {
+// res.render("login.ejs")
+// })
 // app.get('/login', checknotAuthenticated, (req, res) => {
 //   res.render('login.ejs');
 // });
