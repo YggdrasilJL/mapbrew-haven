@@ -1,5 +1,5 @@
 const router = require('express').Router();
-// const { v4: uuid } = require('uuid');
+const { v4: uuid } = require('uuid');
 const bcrypt = require('bcrypt');
 const User = require('../../models/User');
 
@@ -16,6 +16,7 @@ router.get('/:id', async (req, res) => {
 
 router.post('/register', async (req, res) => {
   try {
+    console.log(req.body)
     const { user_name, email, password } = req.body;
     const hashedPw = await bcrypt.hash(password, 10);
 
@@ -25,8 +26,12 @@ router.post('/register', async (req, res) => {
       email,
       password: hashedPw,
     });
+    req.session.save(() => {
+      req.session.loggedIn = true;
+      //might want to save user id if we want too
+      res.status(200).json({ message: 'User registered.' });
+    })
 
-    res.status(201).json({ message: 'User registered.' });
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: 'Error registering User.' });
