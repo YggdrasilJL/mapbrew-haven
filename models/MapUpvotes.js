@@ -1,26 +1,26 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class MapUpvotes extends Model {}
+class MapUpvotes extends Model { }
 
 MapUpvotes.init(
   {
     id: {
-      type: DataTypes.UUID,
+      type: DataTypes.STRING,
       allowNull: false,
       primaryKey: true,
       defaultValue: DataTypes.UUIDV4,
     },
     userId: {
-      type: DataTypes.UUID,
+      type: DataTypes.STRING,
       allowNull: false,
       references: {
-        model: 'users',
+        model: 'user',
         key: 'id',
       },
     },
     mapId: {
-      type: DataTypes.UUID,
+      type: DataTypes.STING,
       allowNull: false,
       references: {
         model: 'user_creations',

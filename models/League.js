@@ -3,12 +3,12 @@ const bcrypt = require('bcrypt');
 const { v4: uuid } = require('uuid');
 const sequelize = require('../config/connection');
 
-class League extends Model {}
+class League extends Model { }
 
 League.init(
   {
     id: {
-      type: DataTypes.UUID,
+      type: DataTypes.STRING,
       allowNull: false,
       primaryKey: true,
     },
