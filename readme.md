@@ -6,6 +6,12 @@ Mapbrew is an interactive website focused on creating tile based maps for tablet
 
 ## Future Features
 
+- All campaign members able to join a league to see game maps
+- Chat function on the league 
+- Dungeon/Game Master note sections for keeping track of campaign storyline
+- Eventual character creation section for avatar artwork
+
+
 ## Table of Contents
 
 - [Installation](#installation)
@@ -19,6 +25,14 @@ Mapbrew is an interactive website focused on creating tile based maps for tablet
 
 ## Examples <a id="examples"></a>
 
+Main Page 
+![Main Page](./public/assets/images/site%20examples/mainexample.png)
+Login Page
+![login Page](./public/assets/images/site%20examples/loginexample.png)
+Map Builder
+![Map Builder](./public/assets/images/site%20examples/builderexample.png)
+FAQ Page
+![FAQ Page](./public/assets/images/site%20examples/faqexample.png)
 
 ## Credits<a id="credits"></a>
 
@@ -37,22 +51,30 @@ Nikki - [nikkivno]("https://github.com/nikkivno")<br>
 Daniel - [GrayCoded]("https://github.com/GrayCoded")<br>
 Scott - [Scoges]("https://github.com/scoges")
 
-## What's going on
+## Who Did What
+
 
 Jacob
 - RESTful API 
 - HTML/CSS/JS front end 
 - schema/seeds clean up
+- Authentication
 
 Nikki 
 - HTML/CSS/JS front end
 - Front end Design/Wireframe
 - schema/seeds clean up
+- RESTful API
+- Authentication
+- Swiperjs 
 
 Daniel 
 - Schema Creation
 - Table Creation
+- Authentication
+- Swiperjs
 
 Scott
 - Tile Generation 
 - Mapbuilder.js to integrate map builder into website 
+- Authentication (spearheading)
