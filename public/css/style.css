@@ -1,5 +1,19 @@
 /* All page features */
 
+#everything {
+  height: 100vh;
+  width: 100vw;
+  background-image: url('../assets/images/mainPage.png');
+  background-repeat: no-repeat;
+  background-position-y: 50%;
+  background-size: cover;
+  /* overflow: hidden; */
+}
+
+.row {
+  max-width: 100vw;
+}
+
 nav {
   display: flex;
   background: #3d3543;
@@ -9,9 +23,8 @@ nav {
 #navTitle {
   color: white;
   font-family: 'Cinzel Decorative', sans-serif;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  display: flex;
+  justify-content: flex-end;
   letter-spacing: 15px;
 }
 
@@ -28,10 +41,7 @@ nav {
 }
 
 body {
-  height: 100%;
-  background-image: url('../assets/images/mainPage.png');
-  background-repeat: no-repeat;
-  background-size: cover;
+  height: 100vh;
   margin: 0%;
   padding: 0%;
 }
@@ -73,6 +83,7 @@ h3 {
   flex-direction: column;
   height: 450px;
   width: 400px;
+  max-width: 90vw;
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 15px;
   margin: auto;

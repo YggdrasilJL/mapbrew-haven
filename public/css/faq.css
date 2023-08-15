@@ -1,3 +1,7 @@
+#everything {
+  max-width: 99vw;
+}
+
 .navButton {
   color: white;
   background-color: transparent;
@@ -35,7 +39,6 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
 
 .quest,
