@@ -58,7 +58,7 @@ These tests ensure secure password handling and reliable authentication function
 
 ## Questions <a id="questions"></a>
 
-This website was divised and completed by Jacob Lowther, Nikki Vigneault, Daniel Grayson, and Scott Ogrins, if you'd like to see more of our work see our github repositories below:
+This website was divised and completed by Jacob Lowther, Nikki Vigneault, Daniel Grayson, and Scott Ogrins, if you'd like to see more of our work see our github profiles below:
 
 Jacob - [YggdrasilJL]("https://github.com/YggdrasilJL")<br>
 Nikki - [nikkivno]("https://github.com/nikkivno")<br>
