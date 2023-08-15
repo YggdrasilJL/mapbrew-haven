@@ -41,17 +41,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const loginFormHandler = async (event) => {
     event.preventDefault();
-  
+
     const username = document.querySelector('#username-login').value.trim();
     const password = document.querySelector('#password-login').value.trim();
-  
+
     if (username && password) {
       const response = await fetch('/api/users/login', {
         method: 'POST',
         body: JSON.stringify({ email, password }),
         headers: { 'Content-Type': 'application/json' },
       });
-  
+
       if (response.ok) {
         document.location.replace('/');
       } else {
@@ -60,7 +60,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   };
 
-  document.querySelector('.loginform').addEventListener('click', loginFormHandler);
+  document
+    .querySelector('#loginform')
+    .addEventListener('click', loginFormHandler);
 
   //  Signup Modal
 
@@ -110,16 +112,16 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const buttonClickSound = document.getElementById("buttonClickSound");
-  buttonClickSound.volume = 0.5;
+// document.addEventListener("DOMContentLoaded", function () {
+//   const buttonClickSound = document.getElementById("buttonClickSound");
+//   buttonClickSound.volume = 0.5;
 
-  const buttons = document.querySelectorAll(".navButton, .button-as-link, .primary-button");
-  buttons.forEach(button => {
-    button.addEventListener("click", function () {
-      buttonClickSound.currentTime = 0; // Rewind to the beginning of the audio
-      buttonClickSound.playbackRate = 2.5;
-      buttonClickSound.play(); // Play the audio
-    });
-  });
-});
+//   const buttons = document.querySelectorAll(".navButton, .button-as-link, .primary-button");
+//   buttons.forEach(button => {
+//     button.addEventListener("click", function () {
+//       buttonClickSound.currentTime = 0; // Rewind to the beginning of the audio
+//       buttonClickSound.playbackRate = 2.5;
+//       buttonClickSound.play(); // Play the audio
+//     });
+//   });
+// });
