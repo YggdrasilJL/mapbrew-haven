@@ -10,7 +10,7 @@ if (process.env.DB_NAME && process.env.DB_USER && process.env.DB_PASSWORD) {
     port: 3306
   });
 } else {
-  throw new Error('Missing environment variables for database connection.');
+  throw Error('Missing environment variables for database connection.');
 }
 
 module.exports = sequelize;
