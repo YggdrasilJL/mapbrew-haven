@@ -2,7 +2,7 @@
 
 ## Project Description
 
-Mapbrew is an interactive website focused on creating tile based maps for tabletop RPGs. 
+Mapbrew is an interactive website focused on users creating tile based maps that are perfrect for tabletop RPGs. Unleash your endless imagination, whether to use for immersive gaming experiences or simply artistic expression. Bring your worlds into reality with MapBrew. Users can create an account so they can store their maps for future use. 
 
 ## Future Features
 
@@ -22,6 +22,8 @@ Mapbrew is an interactive website focused on creating tile based maps for tablet
 - [Questions](#questions)
 
 ## Installation <a id="installation"></a>
+
+No need to install anything, just head to our website link and create an account!
 
 ## Examples <a id="examples"></a>
 
@@ -53,7 +55,7 @@ Scott - [Scoges]("https://github.com/scoges")
 
 
 Jacob
-- RESTful API 
+- RESTful API (bulk)
 - HTML/CSS/JS front end 
 - schema/seeds clean up
 - Authentication
