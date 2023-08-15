@@ -15,6 +15,7 @@ body {
     display: flex;
     width: 1000px;
     height: auto;
+    margin-top: 50px;
     justify-content: center;
     align-items: center;
 }
@@ -39,7 +40,7 @@ body {
     width: .75rem;
     height: .75rem;
     margin: 0 .375rem;
-    background-color: #36454f;
+    background-color: git #36454f;
 }
 
 #swiper-1 .swiper-pagination-bullet-active {
