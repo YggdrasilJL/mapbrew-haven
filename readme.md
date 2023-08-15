@@ -6,10 +6,11 @@ Mapbrew is an interactive website focused on creating tile based maps for tablet
 
 ## Future Features
 
-- All campaign members able to join a league to see game maps
+- Expansion of tiles to encompase both indoor and more outdoor weather contions and attributes
+- All campaign members able to join a single league to see game maps
 - Chat function on the league 
 - Dungeon/Game Master note sections for keeping track of campaign storyline
-- Eventual character creation section for avatar artwork
+- Eventual character creation section with exportable artwork
 
 
 ## Table of Contents
@@ -18,7 +19,6 @@ Mapbrew is an interactive website focused on creating tile based maps for tablet
 - [Examples](#examples)
 - [Credits](#credits)
 - [Tests](#tests)
-- [Usage](#usage)
 - [Questions](#questions)
 
 ## Installation <a id="installation"></a>
@@ -39,8 +39,6 @@ FAQ Page
 - Lock and Unlock images by DinosoftLabs on flatiron.com 
 
 ## Tests <a id="tests"></a>
-
-## Usage <a id="usage"></a>
 
 ## Questions <a id="questions"></a>
 
@@ -64,8 +62,8 @@ Nikki
 - HTML/CSS/JS front end
 - Front end Design/Wireframe
 - schema/seeds clean up
-- RESTful API
-- Authentication
+- RESTful API help 
+- Authentication 
 - Swiperjs 
 
 Daniel 

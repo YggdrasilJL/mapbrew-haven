@@ -16,7 +16,6 @@ router.get('/:id', async (req, res) => {
 
 router.post('/register', async (req, res) => {
   try {
-    console.log(req.body)
     const { user_name, email, password } = req.body;
     const hashedPw = await bcrypt.hash(password, 10);
 
@@ -29,7 +28,7 @@ router.post('/register', async (req, res) => {
     req.session.save(() => {
       req.session.loggedIn = true;
       //might want to save user id if we want too
-      req.session.user_id= newUser.id;
+
       // res.status(200).json({ message: 'User registered.' });
       return res.redirect('/index')
     })
