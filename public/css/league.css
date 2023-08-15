@@ -34,13 +34,12 @@ body {
     object-fit: contain;
 }
 
-
 #swiper-1 .swiper-pagination-bullet {
     opacity: 1;
     width: .75rem;
     height: .75rem;
     margin: 0 .375rem;
-    background-color: git #36454f;
+    background-color: #36454f;
 }
 
 #swiper-1 .swiper-pagination-bullet-active {

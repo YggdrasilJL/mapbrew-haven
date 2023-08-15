@@ -8,7 +8,7 @@ new Swiper('#swiper-1', {
     keyboard: {
         enabled: true,
     },
-    lazyLoading: true,
+    // lazyLoading: true,
     loop: true
 });
 
