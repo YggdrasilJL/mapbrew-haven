@@ -25,184 +25,193 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
-    <nav>
-      <div class="center">
-        <a href="index"><p id="navTitle">Mapbrew</p>
+    <div id="everything">
+      <div class="row m-0">
+        <nav class="navbar">
+          <div class="col">
+            <!-- column to make mapbrew centered -->
+          </div>
+          <div class="col d-flex justify-content-center">
+            <a href="index">
+              <p id="navTitle">Mapbrew</p>
+            </a>
+          </div>
+          <div class="right col d-flex justify-content-end">
+            <button class="navButton"><a href="login">Login</a></button>
+            <button class="navButton">
+              <a href="mapbuilder">Map Builder</a>
+            </button>
+            <button class="navButton"><a href="league">League</a></button>
+            <button class="navButton"><a href="faq">FAQ</a></button>
+          </div>
+        </nav>
       </div>
-<div class="right">
-        <button class="navButton"><a href="login">Login</a></button>
-        <button class="navButton">
-          <a href="mapBuilder">Map Builder</a>
-        </button>
-        <button class="navButton"><a href="league">League</a></button>
-        <button class="navButton"><a href="faq">FAQ</a></button>
+      <div id="faq">
+        <p>FAQ</p>
       </div>
-    </nav>
-    <div id="faq">
-      <p>FAQ</p>
+      <main>
+        <div class="collapseAll">
+          <p class="d-inline-flex">
+            <button
+              class="btn all"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target=".cont"
+              aria-expanded="false"
+              aria-controls="info"
+            >
+              Unroll scrolls
+            </button>
+          </p>
+        </div>
+        <div class="allQuestContain">
+          <div class="column1">
+            <div class="quest quest1">
+              <p class="d-inline-flex">
+                <button
+                  class="btn q"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#info"
+                  aria-expanded="false"
+                  aria-controls="info"
+                >
+                  What is MapBrew?
+                </button>
+              </p>
+              <div class="collapse contain" id="info">
+                <div class="collapse-content">
+                  MapBrew is a free to use website allowing you to design custom
+                  maps that are PERFECT for tabletop RPGs. Unleash your endless
+                  imagination, whether to use for immersive gaming experiences
+                  or simply artistic expression. Bring your worlds into reality
+                  with MapBrew.
+                </div>
+              </div>
+            </div>
+            <div class="quest quest2">
+              <p class="d-inline-flex">
+                <button
+                  class="btn q"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#info2"
+                  aria-expanded="false"
+                  aria-controls="info2"
+                >
+                  How do I start using the map building feature?
+                </button>
+              </p>
+              <div class="collapse contain" id="info2">
+                <div class="collapse-content">
+                  Click "Map builder" in the upper right corner of the screen
+                  and on the left, you will see a canvas that awaits to bring
+                  your vision to life, and on the right, an array of tiles ready
+                  for your endless creativity. The true magic lies in the
+                  editing layers...
+                  <br />
+                  <br />
+                  Begin with the "Bottom Layer" to lay the groundwork with lush
+                  grass. Move to the "Middle Layer" to build your charming
+                  abode. Finally, reach the "Top Layer" and crown your creation
+                  with glistening crystals atop the roof.
+                </div>
+              </div>
+            </div>
+            <div class="quest quest3">
+              <p class="d-inline-flex">
+                <button
+                  class="btn q"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#info3"
+                  aria-expanded="false"
+                  aria-controls="info3"
+                >
+                  Is there a limit to the amount of maps I can create?
+                </button>
+              </p>
+              <div class="collapse contain" id="info3">
+                <div class="collapse-content">
+                  No! There is no limit to the amount of creations you can make,
+                  the only limitation is your imagination.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column2">
+            <div class="quest quest4">
+              <p class="d-inline-flex">
+                <button
+                  class="btn q"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#info4"
+                  aria-expanded="false"
+                  aria-controls="info4"
+                >
+                  How do I clear and start over if I am not satisfied with my
+                  map?
+                </button>
+              </p>
+              <div class="collapse contain" id="info4">
+                <div class="collapse-content">
+                  Simply click "Clear Canvas" under the map.
+                </div>
+              </div>
+            </div>
+            <div class="quest quest5">
+              <p class="d-inline-flex">
+                <button
+                  class="btn q"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#info5"
+                  aria-expanded="false"
+                  aria-controls="info5"
+                >
+                  How do I save my map?
+                </button>
+              </p>
+              <div class="collapse contain" id="info5">
+                <div class="collapse-content">
+                  After you are satisfied with your creation, click the "Export
+                  Image" below the map, that will take you to a page where you
+                  can right click and save image!
+                </div>
+              </div>
+            </div>
+            <div class="quest quest6">
+              <p class="d-inline-flex">
+                <button
+                  class="btn q"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#info6"
+                  aria-expanded="false"
+                  aria-controls="info6"
+                >
+                  Can I share my map creations with others?
+                </button>
+              </p>
+              <div class="collapse contain" id="info6">
+                <div class="collapse-content">
+                  Yes! There is a way to share with others, click "Upload Map"
+                  and go to the "Community" tab in the upper right corner,
+                  behold the treasure trove of maps crafted by heroes like
+                  yourself! Cast an upvote spell if you love their design.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
     </div>
-    <main>
-      <div class="collapseAll">
-        <p class="d-inline-flex">
-          <button
-            class="btn all"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target=".cont"
-            aria-expanded="false"
-            aria-controls="info"
-          >
-            Unroll scrolls
-          </button>
-        </p>
-      </div>
-      <div class="allQuestContain">
-        <div class="column1">
-          <div class="quest quest1">
-            <p class="d-inline-flex">
-              <button
-                class="btn q"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#info"
-                aria-expanded="false"
-                aria-controls="info"
-              >
-                What is MapBrew?
-              </button>
-            </p>
-            <div class="collapse contain" id="info">
-              <div class="collapse-content">
-                MapBrew is a free to use website allowing you to design custom
-                maps that are PERFECT for tabletop RPGs. Unleash your endless
-                imagination, whether to use for immersive gaming experiences or
-                simply artistic expression. Bring your worlds into reality with
-                MapBrew.
-              </div>
-            </div>
-          </div>
-          <div class="quest quest2">
-            <p class="d-inline-flex">
-              <button
-                class="btn q"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#info2"
-                aria-expanded="false"
-                aria-controls="info2"
-              >
-                How do I start using the map building feature?
-              </button>
-            </p>
-            <div class="collapse contain" id="info2">
-              <div class="collapse-content">
-                Click "Map builder" in the upper right corner of the screen and
-                on the left, you will see a canvas that awaits to bring your
-                vision to life, and on the right, an array of tiles ready for
-                your endless creativity. The true magic lies in the editing
-                layers...
-                <br />
-                <br />
-                Begin with the "Bottom Layer" to lay the groundwork with lush
-                grass. Move to the "Middle Layer" to build your charming abode.
-                Finally, reach the "Top Layer" and crown your creation with
-                glistening crystals atop the roof.
-              </div>
-            </div>
-          </div>
-          <div class="quest quest3">
-            <p class="d-inline-flex">
-              <button
-                class="btn q"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#info3"
-                aria-expanded="false"
-                aria-controls="info3"
-              >
-                Is there a limit to the amount of maps I can create?
-              </button>
-            </p>
-            <div class="collapse contain" id="info3">
-              <div class="collapse-content">
-                No! There is no limit to the amount of creations you can make,
-                the only limitation is your imagination.
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="column2">
-          <div class="quest quest4">
-            <p class="d-inline-flex">
-              <button
-                class="btn q"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#info4"
-                aria-expanded="false"
-                aria-controls="info4"
-              >
-                How do I clear and start over if I am not satisfied with my map?
-              </button>
-            </p>
-            <div class="collapse contain" id="info4">
-              <div class="collapse-content">
-                Simply click "Clear Canvas" under the map.
-              </div>
-            </div>
-          </div>
-          <div class="quest quest5">
-            <p class="d-inline-flex">
-              <button
-                class="btn q"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#info5"
-                aria-expanded="false"
-                aria-controls="info5"
-              >
-                How do I save my map?
-              </button>
-            </p>
-            <div class="collapse contain" id="info5">
-              <div class="collapse-content">
-                After you are satisfied with your creation, click the "Export
-                Image" below the map, that will take you to a page where you can
-                right click and save image!
-              </div>
-            </div>
-          </div>
-          <div class="quest quest6">
-            <p class="d-inline-flex">
-              <button
-                class="btn q"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#info6"
-                aria-expanded="false"
-                aria-controls="info6"
-              >
-                Can I share my map creations with others?
-              </button>
-            </p>
-            <div class="collapse contain" id="info6">
-              <div class="collapse-content">
-                Yes! There is a way to share with others, click "Upload Map" and
-                go to the "Community" tab in the upper right corner, behold the
-                treasure trove of maps crafted by heroes like yourself! Cast an
-                upvote spell if you love their design.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
-</body>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
       crossorigin="anonymous"
     ></script>
     <script src="../js/faq.js"></script>
- 
+  </body>
 </html>
