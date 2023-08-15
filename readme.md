@@ -73,7 +73,7 @@ Jacob
 - HTML/CSS/JS front end 
 - schema/seeds clean up
 - Authentication
-- Heroku
+- Heroku Deployment
 
 Nikki 
 - HTML/CSS/JS front end
@@ -83,7 +83,7 @@ Nikki
 - Authentication 
 - Swiperjs 
 - README File
-- Heroku
+- Heroku Deployment
 - Presentation Slideshow
 
 
