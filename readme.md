@@ -6,8 +6,8 @@ Mapbrew is an interactive website focused on users creating tile based maps that
 
 ## Future Features
 
-- Expansion of tiles to encompase both indoor and more outdoor weather contions and attributes
-- All campaign members able to join a single league to see game maps
+- Expansion of tiles to encompase both indoor and more outdoor weather conditions and attributes
+- All campaign members able to join a single league to see game maps and interact with the DM on their favourites 
 - Chat function on the league 
 - Dungeon/Game Master note sections for keeping track of campaign storyline
 - Eventual character creation section with exportable artwork
