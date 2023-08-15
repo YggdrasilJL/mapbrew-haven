@@ -55,4 +55,8 @@ router.get('/faq', (req, res) => {
   res.render('faq.ejs');
 });
 
+router.get('*', (req, res) => {
+  res.render('404.ejs');
+});
+
 module.exports = router;
