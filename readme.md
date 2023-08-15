@@ -15,11 +15,16 @@ Mapbrew is an interactive website focused on users creating tile based maps that
 
 ## Table of Contents
 
+- [Deployed Webpage](#deployedpage)
 - [Installation](#installation)
 - [Examples](#examples)
 - [Credits](#credits)
 - [Tests](#tests)
 - [Questions](#questions)
+
+## Deployed Website <a id='deployedpage'></a> 
+
+[Mapbrew Website](https://mapbrew-websitee-20a575919a4b.herokuapp.com)
 
 ## Installation <a id="installation"></a>
 
@@ -40,11 +45,20 @@ FAQ Page
 
 - Lock and Unlock images by DinosoftLabs on flatiron.com 
 
-## Tests <a id="tests"></a>
+## User Model Testing <a id="tests"></a>
+
+### Password Hashing
+This test verifies that passwords are securely hashed before being stored. The input password is hashed using bcrypt with a complexity factor of 10. Assertions check password mismatch, input password matching hashed password, and the correct storage of the hashed password.
+
+### Authentication Checks
+Two tests authenticate users:
+- It compares a correct password using checkPassword() method, expecting true.
+- It compares an incorrect password using checkPassword(), expecting false.
+These tests ensure secure password handling and reliable authentication functionality in the User model.
 
 ## Questions <a id="questions"></a>
 
-This website was divised and completed by Jacob Lowther, Nikki Vigneault, Daniel Grayson, and Scott Ogrins, if you'd like to see more of our work see our github repositories below:
+This website was divised and completed by Jacob Lowther, Nikki Vigneault, Daniel Grayson, and Scott Ogrins, if you'd like to see more of our work see our github profiles below:
 
 Jacob - [YggdrasilJL]("https://github.com/YggdrasilJL")<br>
 Nikki - [nikkivno]("https://github.com/nikkivno")<br>
@@ -59,6 +73,7 @@ Jacob
 - HTML/CSS/JS front end 
 - schema/seeds clean up
 - Authentication
+- Heroku Deployment
 
 Nikki 
 - HTML/CSS/JS front end
@@ -67,6 +82,10 @@ Nikki
 - RESTful API help 
 - Authentication 
 - Swiperjs 
+- README File
+- Heroku Deployment
+- Presentation Slideshow
+
 
 Daniel 
 - Schema Creation
@@ -78,3 +97,4 @@ Scott
 - Tile Generation 
 - Mapbuilder.js to integrate map builder into website 
 - Authentication (spearheading)
+- Presentation Script
